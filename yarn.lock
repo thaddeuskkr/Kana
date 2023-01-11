@@ -1080,9 +1080,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^4.0.1-pr-590.79c4f79.0":
-  version: 4.0.1-pr-590.79c4f79.0
-  resolution: "@sapphire/framework@npm:4.0.1-pr-590.79c4f79.0"
+"@sapphire/framework@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@sapphire/framework@npm:4.0.1"
   dependencies:
     "@discordjs/builders": ^1.4.0
     "@sapphire/discord-utilities": ^3.0.0
@@ -1093,7 +1093,7 @@ __metadata:
     "@sapphire/result": ^2.6.0
     "@sapphire/stopwatch": ^1.5.0
     "@sapphire/utilities": ^3.11.0
-  checksum: 2b7ac9888c517621cf9aa1527999ac65955e464b4919fda2b865286635c96d29b6595dd69d335da7ccdfc2c051b49366022b620741b4897f505e11a1a1aba1d4
+  checksum: 97cda09441c9911924493e6f3ad3c554713c0383166373af03e2a4acf1f547dfe421eaa52422298ebf1abb847a62e59c53cf74b48d5bb5ad54ba9973fdc3efaf
   languageName: node
   linkType: hard
 
@@ -2596,7 +2596,7 @@ __metadata:
   dependencies:
     "@keyv/mongo": ^2.1.8
     "@sapphire/discord.js-utilities": ^6.0.0
-    "@sapphire/framework": ^4.0.1-pr-590.79c4f79.0
+    "@sapphire/framework": ^4.0.1
     "@sapphire/pieces": ^3.6.0
     "@sapphire/plugin-hmr": ^2.0.0
     "@sapphire/plugin-logger": ^3.0.1

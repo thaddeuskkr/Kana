@@ -27,7 +27,7 @@
   "dependencies": {
     "@keyv/mongo": "^2.1.8",
     "@sapphire/discord.js-utilities": "^6.0.0",
-    "@sapphire/framework": "^4.0.1-pr-590.79c4f79.0",
+    "@sapphire/framework": "^4.0.1",
     "@sapphire/pieces": "^3.6.0",
     "@sapphire/plugin-hmr": "^2.0.0",
     "@sapphire/plugin-logger": "^3.0.1",
