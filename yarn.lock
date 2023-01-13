@@ -2612,7 +2612,7 @@ __metadata:
     pretty-ms: ^8.0.0
     qrcode-terminal: ^0.12.0
     shoukaku: ^3.2.3
-    whatsapp-web.js: ^1.18.4
+    whatsapp-web.js: "https://github.com/thaddeuskkr/whatsapp-web.js"
   languageName: unknown
   linkType: soft
 
@@ -3852,9 +3852,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatsapp-web.js@npm:^1.18.4":
+"whatsapp-web.js@https://github.com/thaddeuskkr/whatsapp-web.js":
   version: 1.18.4
-  resolution: "whatsapp-web.js@npm:1.18.4"
+  resolution: "whatsapp-web.js@https://github.com/thaddeuskkr/whatsapp-web.js.git#commit=67c2290d43faa2392f0dcbe71f6466ef3383050c"
   dependencies:
     "@pedroslopez/moduleraid": ^5.0.2
     archiver: ^5.3.1
@@ -3873,7 +3873,7 @@ __metadata:
       optional: true
     unzipper:
       optional: true
-  checksum: 84871d3689ee557f3429956576a61bc6ed7991ecde2b9d9e7a7d1447354fb59ba10132101052aa40cfee13db883a400c9a3fc68cdae53f78bf789aa324d33b1a
+  checksum: f1c26e7f5accbffba9000be26173818850d6609eafe13bf30f8d74874d38c04f9727cfe2962580ec2d245b73afe5370e4013651e19e3233e2cb82829d3829da4
   languageName: node
   linkType: hard
 
