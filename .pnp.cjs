@@ -29,7 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@keyv/mongo", "npm:2.1.8"],\
-            ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
             ["@sapphire/framework", "npm:4.0.1"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/plugin-hmr", "npm:2.0.0"],\
@@ -1212,6 +1212,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@sapphire-discord.js-utilities-npm-6.0.0-b6db5c1a8c-00752fe7c7.zip/node_modules/@sapphire/discord.js-utilities/",\
           "packageDependencies": [\
             ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
+            ["@sapphire/discord-utilities", "npm:3.0.0"],\
+            ["@sapphire/duration", "npm:1.0.0"],\
+            ["@sapphire/utilities", "npm:3.11.0"],\
+            ["tslib", "npm:2.4.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:6.0.1", {\
+          "packageLocation": "./.yarn/cache/@sapphire-discord.js-utilities-npm-6.0.1-77d48bb991-e5d95c97f1.zip/node_modules/@sapphire/discord.js-utilities/",\
+          "packageDependencies": [\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
             ["@sapphire/discord-utilities", "npm:3.0.0"],\
             ["@sapphire/duration", "npm:1.0.0"],\
             ["@sapphire/utilities", "npm:3.11.0"],\
@@ -2982,7 +2993,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["kana", "workspace:."],\
             ["@keyv/mongo", "npm:2.1.8"],\
-            ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
             ["@sapphire/framework", "npm:4.0.1"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/plugin-hmr", "npm:2.0.0"],\

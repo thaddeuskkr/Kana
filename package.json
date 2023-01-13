@@ -26,7 +26,7 @@
   "packageManager": "yarn@3.3.1",
   "dependencies": {
     "@keyv/mongo": "^2.1.8",
-    "@sapphire/discord.js-utilities": "^6.0.0",
+    "@sapphire/discord.js-utilities": "^6.0.1",
     "@sapphire/framework": "^4.0.1",
     "@sapphire/pieces": "^3.6.0",
     "@sapphire/plugin-hmr": "^2.0.0",
