@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  kana:
+    container_name: kana
+    build: .
+    restart: on-failure
+    environment:
+      - NODE_ENV="development"
+    env_file: 
+      - .env
