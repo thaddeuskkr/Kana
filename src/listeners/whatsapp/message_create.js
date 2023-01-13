@@ -41,7 +41,7 @@ export class MessageCreateListener extends Listener {
             await container.db.set('users', users);
         }
         const user = Object.values(users).find(u => u.whatsapp === (msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '')));
-        const discordUser = container.client.users.cache.get(user.discord) || undefined;
+        const discordUser = user ? container.client.users.cache.get(user.discord) || undefined : undefined;
 
         const voiceChannels = [];
         this.container.client.channels.cache.filter((channel) => channel.type === ChannelType.GuildVoice || channel.type === ChannelType.GuildStageVoice).forEach((channel) => {
