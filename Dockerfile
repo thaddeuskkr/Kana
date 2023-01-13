@@ -5,7 +5,8 @@ WORKDIR /usr/kana
 # Copy required files
 COPY . . 
 # Install dependencies
-RUN npm install -g yarn
+RUN corepack enable
+RUN corepack prepare yarn@stable --activate
 RUN yarn
 # Run Kana
 CMD ["yarn", "node", "."]
