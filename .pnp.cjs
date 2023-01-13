@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.31.0"],\
             ["keyv", "npm:4.5.2"],\
+            ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.2.3"],\
@@ -2995,6 +2996,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.31.0"],\
             ["keyv", "npm:4.5.2"],\
+            ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.2.3"],\
