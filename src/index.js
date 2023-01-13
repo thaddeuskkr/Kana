@@ -20,21 +20,14 @@ import '@sapphire/plugin-subcommands/register';
 
 const client = new SapphireClient({
     intents: [
-        GatewayIntentBits.AutoModerationConfiguration,
-        GatewayIntentBits.AutoModerationExecution,
         GatewayIntentBits.DirectMessageReactions,
-        GatewayIntentBits.DirectMessageTyping,
         GatewayIntentBits.DirectMessages,
         GatewayIntentBits.GuildBans,
         GatewayIntentBits.GuildEmojisAndStickers,
-        GatewayIntentBits.GuildIntegrations,
-        GatewayIntentBits.GuildInvites,
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.GuildMessageTyping,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildScheduledEvents,
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.GuildWebhooks,
         GatewayIntentBits.Guilds,
@@ -45,8 +38,6 @@ const client = new SapphireClient({
         Partials.User,
         Partials.GuildMember,
         Partials.Message,
-        Partials.Reaction,
-        Partials.ThreadMember
     ],
     logger: {
         level: process.env.NODE_ENV === 'development' ? LogLevel.Debug : LogLevel.Info
