@@ -8,3 +8,5 @@ services:
       - NODE_ENV="development"
     env_file: 
       - .env
+    volumes:
+      - ./src/config.js:/usr/kana/src/config.js
