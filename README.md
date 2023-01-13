@@ -1,7 +1,7 @@
+<h1 align="center">Kana</h1>
 <p align="center">
-<h2>Kana</h2>
-Kana is a clean, feature-rich Discord bot, and one (if not the only) bot(s) that integrate with WhatsApp. Coded in node.js and uses the Sapphire framework and discord.js to bring you optimal performance, for free.
-</p>
+Kana is a clean, feature-rich Discord bot, and one of the bots (if not the only bot) that integrate with WhatsApp. Coded in <b>Node.js</b> and uses the <b>Sapphire Framework</b> and <b>discord.js</b> to bring you optimal performance, for free.
+</p>  
 
 ### Features
 - **WhatsApp:** Most commands that Kana currently has can be run in WhatsApp, as well as Discord, after doing a simple one-time linking of both accounts.  
