@@ -146,6 +146,7 @@ export class PlayCommand extends Command {
     }
 
     async whatsappRun({ args, msg, discordUser, voiceChannels }) {
+        if (!discordUser) return await msg.reply('You are not linked to a Discord account. Use ```/link``` to link your WhatsApp account to your Discord account.');
         let query = args.join(' ');
         const next = (query.includes('--playnext') || args.includes('-next')) || false;
         if (next === true) query.replace('--playnext', '').replace('-next', '');

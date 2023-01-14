@@ -63,7 +63,8 @@ export class QueueCommand extends Command {
         pm.run(interaction);
     }
 
-    async whatsappRun({ msg, dispatcher }) {
+    async whatsappRun({ msg, dispatcher, discordUser }) {
+        if (!discordUser) return await msg.reply('You are not linked to a Discord account. Use ```/link``` to link your WhatsApp account to your Discord account.');
         if (!dispatcher) return await msg.reply('There is nothing playing.');
         const queue = dispatcher.queue;
         const current = dispatcher.current;
