@@ -54,7 +54,7 @@ export class MessageCreateListener extends Listener {
         if (voiceChannels.length > 0) voice = true;
         for (const channels of voiceChannels) if (channels.members.find((member) => member.id === discordUser.id) && channels.members.find((member) => member.id === this.container.client.user.id)) sameVoice = true;
         const defaultVc = voiceChannels[0];
-        const dispatcher = this.container.queue.get(defaultVc.guild.id);
+        const dispatcher = voiceChannels[0] ? this.container.queue.get(defaultVc?.guild?.id) : null;
 
         try {
             command.whatsappRun({ args, msg, prefix, commandName, user, discordUser, voiceChannels, voice, sameVoice, defaultVc, dispatcher, author: msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '') });
