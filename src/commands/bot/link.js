@@ -55,6 +55,8 @@ export class LinkCommand extends Command {
             return;
         }
         const code = this.container.util.generateCode();
+        const existing = Object.values(verification).find((v) => v.discord === interaction.user.id);
+        if (existing) delete verification[String(existing.code)];
         verification[String(code)] = { code, discord: interaction.user.id };
         await this.container.db.set('verification', verification);
         interaction.reply({ embeds: [this.container.util.embed('info', `Please text this command to **[+65 6286 0768 (click me!)](https://wa.me/6562860768)** on WhatsApp: \`/link ${code}\``)], ephemeral: true });
