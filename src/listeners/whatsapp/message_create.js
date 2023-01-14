@@ -44,17 +44,21 @@ export class MessageCreateListener extends Listener {
         const discordUser = user ? container.client.users.cache.get(user.discord) || undefined : undefined;
 
         const voiceChannels = [];
-        this.container.client.channels.cache.filter((channel) => channel.type === ChannelType.GuildVoice || channel.type === ChannelType.GuildStageVoice).forEach((channel) => {
-            if (channel.members.find((member) => member.id === discordUser.id)) voiceChannels.push(channel);
-        });
-        
-        // Preconditions
+        let dispatcher = null;
         let voice = false;
         let sameVoice = false;
-        if (voiceChannels.length > 0) voice = true;
-        for (const channels of voiceChannels) if (channels.members.find((member) => member.id === discordUser.id) && channels.members.find((member) => member.id === this.container.client.user.id)) sameVoice = true;
-        const defaultVc = voiceChannels[0];
-        const dispatcher = voiceChannels[0] ? this.container.queue.get(defaultVc?.guild?.id) : null;
+        let defaultVc = null;
+        if (discordUser) {
+            this.container.client.channels.cache.filter((channel) => channel.type === ChannelType.GuildVoice || channel.type === ChannelType.GuildStageVoice).forEach((channel) => {
+                if (channel.members.find((member) => member.id === discordUser.id)) voiceChannels.push(channel);
+            });
+        
+            // Preconditions
+            if (voiceChannels.length > 0) voice = true;
+            for (const channels of voiceChannels) if (channels.members.find((member) => member.id === discordUser.id) && channels.members.find((member) => member.id === this.container.client.user.id)) sameVoice = true;
+            defaultVc = voiceChannels[0];
+            dispatcher = voiceChannels[0] ? this.container.queue.get(defaultVc?.guild?.id) : null;
+        }
 
         try {
             command.whatsappRun({ args, msg, prefix, commandName, user, discordUser, voiceChannels, voice, sameVoice, defaultVc, dispatcher, author: msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '') });
