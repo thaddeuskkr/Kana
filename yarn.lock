@@ -1697,6 +1697,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"common-tags@npm:^1.8.2":
+  version: 1.8.2
+  resolution: "common-tags@npm:1.8.2"
+  checksum: 767a6255a84bbc47df49a60ab583053bb29a7d9687066a18500a516188a062c4e4cd52de341f22de0b07062e699b1b8fe3cfa1cb55b241cb9301aeb4f45b4dff
+  languageName: node
+  linkType: hard
+
 "compress-commons@npm:^4.1.0":
   version: 4.1.1
   resolution: "compress-commons@npm:4.1.1"
@@ -2611,6 +2618,7 @@ __metadata:
     "@sapphire/plugin-subcommands": ^4.0.0
     "@sapphire/ratelimits": ^2.4.5
     "@sapphire/stopwatch": ^1.5.0
+    common-tags: ^1.8.2
     discord-api-types: ^0.37.28
     discord.js: ^14.7.1
     dotenv: ^16.0.3
