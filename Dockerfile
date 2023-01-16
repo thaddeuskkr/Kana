@@ -6,7 +6,6 @@ WORKDIR /builder
 COPY . .
 
 # Install dependencies, build
-RUN apt install chromium-browser
 RUN yarn || (cat /tmp/*/build.log; exit 1)
 
 # Use Yarn plugin-production-install - to copy only production dependencies
