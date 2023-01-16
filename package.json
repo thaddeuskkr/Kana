@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn node ."
+    "start": "yarn node .",
+    "start:docker": "yarn node . --docker"
   },
   "repository": {
     "type": "git",

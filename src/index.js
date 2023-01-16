@@ -47,7 +47,7 @@ const client = new SapphireClient({
 
 const whatsapp = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: { headless: true }
+    puppeteer: { headless: true, executablePath: process.argv.includes('--docker') ? '/usr/bin/google-chrome' : undefined },
 });
 
 client.version = version;
