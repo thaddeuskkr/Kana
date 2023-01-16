@@ -1,6 +1,6 @@
 {
   "name": "kana",
-  "version": "3.1.0",
+  "version": "3.3.0",
   "description": "A node.js Discord bot created using the Sapphire framework, using discord.js v14.",
   "main": "src/index.js",
   "type": "module",
