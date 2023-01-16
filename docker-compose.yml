@@ -9,4 +9,11 @@ services:
     env_file: 
       - .env
     volumes:
-      - ./src/config.js:/usr/kana/src/config.js
+      # Configuration
+      - ./src/config.js:/kana/src/config.js
+      # Whatsapp authentication
+      - ./.wwebjs_auth:/kana/.wwebjs_auth
+      # Allow hot reload of Sapphire pieces
+      - ./src/commands:/kana/src/commands
+      - ./src/listeners:/kana/src/listeners
+      - ./src/preconditions:/kana/src/preconditions
