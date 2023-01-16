@@ -5,6 +5,9 @@ WORKDIR /builder
 # Copy configuration files and source
 COPY . .
 
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
+ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
+
 # Install dependencies, build
 RUN yarn || (cat /tmp/*/build.log; exit 1)
 
