@@ -1061,15 +1061,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@npm:6.0.0, @sapphire/discord.js-utilities@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@sapphire/discord.js-utilities@npm:6.0.0"
+"@sapphire/discord.js-utilities@npm:6.0.1, @sapphire/discord.js-utilities@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@sapphire/discord.js-utilities@npm:6.0.1"
   dependencies:
     "@sapphire/discord-utilities": ^3.0.0
     "@sapphire/duration": ^1.0.0
     "@sapphire/utilities": ^3.11.0
     tslib: ^2.4.1
-  checksum: 00752fe7c79666db905e3b1a8d0a20c968b62d1b5279081da2de530c8370b2d3124579cf0a186f5ac4145bb1d107e0bc75988d1f9d1700fe1f5622367c57c37d
+  checksum: e5d95c97f10cf2b4ed249d2e553831522618cc18078a1dfbbf4d18d874b5b34a80930e172ab36fdd4b3099788f2a116fe44b2025d16ab14975a3201f6646e22e
   languageName: node
   linkType: hard
 
@@ -1080,20 +1080,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@sapphire/framework@npm:4.0.1"
+"@sapphire/framework@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@sapphire/framework@npm:4.0.2"
   dependencies:
     "@discordjs/builders": ^1.4.0
     "@sapphire/discord-utilities": ^3.0.0
-    "@sapphire/discord.js-utilities": 6.0.0
+    "@sapphire/discord.js-utilities": 6.0.1
     "@sapphire/lexure": ^1.1.2
     "@sapphire/pieces": ^3.6.0
     "@sapphire/ratelimits": ^2.4.5
     "@sapphire/result": ^2.6.0
     "@sapphire/stopwatch": ^1.5.0
     "@sapphire/utilities": ^3.11.0
-  checksum: 97cda09441c9911924493e6f3ad3c554713c0383166373af03e2a4acf1f547dfe421eaa52422298ebf1abb847a62e59c53cf74b48d5bb5ad54ba9973fdc3efaf
+  checksum: 4af8a83ff072107e035b37fa3d80aad83b55c3fdeb61fc0d06ff7b2d27b60b1792b23105b9bf253f0f588040249e84c06c7a529f0de19eaa4b84624d8ab959c1
   languageName: node
   linkType: hard
 
@@ -1956,9 +1956,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.31.0":
-  version: 8.31.0
-  resolution: "eslint@npm:8.31.0"
+"eslint@npm:^8.32.0":
+  version: 8.32.0
+  resolution: "eslint@npm:8.32.0"
   dependencies:
     "@eslint/eslintrc": ^1.4.1
     "@humanwhocodes/config-array": ^0.11.8
@@ -2001,7 +2001,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: 5e5688bb864edc6b12d165849994812eefa67fb3fc44bb26f53659b63edcd8bcc68389d27cc6cc9e5b79ee22f24b6f311fa3ed047bddcafdec7d84c1b5561e4f
+  checksum: 23c8fb3c57291eecd9c1448faf603226a8f885022a2cd96e303459bf72e39b7f54987c6fb948f0f9eecaf7085600e6eb0663482a35ea83da12e9f9141a22b91e
   languageName: node
   linkType: hard
 
@@ -2609,8 +2609,8 @@ __metadata:
   resolution: "kana@workspace:."
   dependencies:
     "@keyv/mongo": ^2.1.8
-    "@sapphire/discord.js-utilities": ^6.0.0
-    "@sapphire/framework": ^4.0.1
+    "@sapphire/discord.js-utilities": ^6.0.1
+    "@sapphire/framework": ^4.0.2
     "@sapphire/pieces": ^3.6.0
     "@sapphire/plugin-hmr": ^2.0.0
     "@sapphire/plugin-logger": ^3.0.1
@@ -2622,13 +2622,13 @@ __metadata:
     discord-api-types: ^0.37.28
     discord.js: ^14.7.1
     dotenv: ^16.0.3
-    eslint: ^8.31.0
+    eslint: ^8.32.0
     keyv: ^4.5.2
     lodash: ^4.17.21
     pretty-ms: ^8.0.0
     qrcode-terminal: ^0.12.0
     shoukaku: ^3.2.3
-    whatsapp-web.js: "https://github.com/thaddeuskkr/whatsapp-web.js"
+    whatsapp-web.js: ^1.19.2
   languageName: unknown
   linkType: soft
 
@@ -3868,9 +3868,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatsapp-web.js@https://github.com/thaddeuskkr/whatsapp-web.js":
-  version: 1.18.4
-  resolution: "whatsapp-web.js@https://github.com/thaddeuskkr/whatsapp-web.js.git#commit=67c2290d43faa2392f0dcbe71f6466ef3383050c"
+"whatsapp-web.js@npm:^1.19.2":
+  version: 1.19.2
+  resolution: "whatsapp-web.js@npm:1.19.2"
   dependencies:
     "@pedroslopez/moduleraid": ^5.0.2
     archiver: ^5.3.1
@@ -3889,7 +3889,7 @@ __metadata:
       optional: true
     unzipper:
       optional: true
-  checksum: f1c26e7f5accbffba9000be26173818850d6609eafe13bf30f8d74874d38c04f9727cfe2962580ec2d245b73afe5370e4013651e19e3233e2cb82829d3829da4
+  checksum: cd886a9f718fa2f7112736a1c162b4087c4f95a3473e168c1c247bee546d435b5eeb6ed9c55f27330ac6714c4462348ad02235d73f31c4f21f261d3fa496b9fb
   languageName: node
   linkType: hard
 

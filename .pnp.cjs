@@ -29,8 +29,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@keyv/mongo", "npm:2.1.8"],\
-            ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
-            ["@sapphire/framework", "npm:4.0.1"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
+            ["@sapphire/framework", "npm:4.0.2"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/plugin-hmr", "npm:2.0.0"],\
             ["@sapphire/plugin-logger", "npm:3.0.1"],\
@@ -42,13 +42,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord-api-types", "npm:0.37.28"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
-            ["eslint", "npm:8.31.0"],\
+            ["eslint", "npm:8.32.0"],\
             ["keyv", "npm:4.5.2"],\
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.2.3"],\
-            ["whatsapp-web.js", "https://github.com/thaddeuskkr/whatsapp-web.js.git#commit=67c2290d43faa2392f0dcbe71f6466ef3383050c"]\
+            ["whatsapp-web.js", "npm:1.19.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -1209,10 +1209,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@sapphire/discord.js-utilities", [\
-        ["npm:6.0.0", {\
-          "packageLocation": "./.yarn/cache/@sapphire-discord.js-utilities-npm-6.0.0-b6db5c1a8c-00752fe7c7.zip/node_modules/@sapphire/discord.js-utilities/",\
+        ["npm:6.0.1", {\
+          "packageLocation": "./.yarn/cache/@sapphire-discord.js-utilities-npm-6.0.1-77d48bb991-e5d95c97f1.zip/node_modules/@sapphire/discord.js-utilities/",\
           "packageDependencies": [\
-            ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
             ["@sapphire/discord-utilities", "npm:3.0.0"],\
             ["@sapphire/duration", "npm:1.0.0"],\
             ["@sapphire/utilities", "npm:3.11.0"],\
@@ -1231,13 +1231,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@sapphire/framework", [\
-        ["npm:4.0.1", {\
-          "packageLocation": "./.yarn/cache/@sapphire-framework-npm-4.0.1-fc9184501b-97cda09441.zip/node_modules/@sapphire/framework/",\
+        ["npm:4.0.2", {\
+          "packageLocation": "./.yarn/cache/@sapphire-framework-npm-4.0.2-c42d29831b-4af8a83ff0.zip/node_modules/@sapphire/framework/",\
           "packageDependencies": [\
-            ["@sapphire/framework", "npm:4.0.1"],\
+            ["@sapphire/framework", "npm:4.0.2"],\
             ["@discordjs/builders", "npm:1.4.0"],\
             ["@sapphire/discord-utilities", "npm:3.0.0"],\
-            ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
             ["@sapphire/lexure", "npm:1.1.2"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/ratelimits", "npm:2.4.5"],\
@@ -2219,10 +2219,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["eslint", [\
-        ["npm:8.31.0", {\
-          "packageLocation": "./.yarn/cache/eslint-npm-8.31.0-da99c7e469-5e5688bb86.zip/node_modules/eslint/",\
+        ["npm:8.32.0", {\
+          "packageLocation": "./.yarn/cache/eslint-npm-8.32.0-ce390f6a3f-23c8fb3c57.zip/node_modules/eslint/",\
           "packageDependencies": [\
-            ["eslint", "npm:8.31.0"],\
+            ["eslint", "npm:8.32.0"],\
             ["@eslint/eslintrc", "npm:1.4.1"],\
             ["@humanwhocodes/config-array", "npm:0.11.8"],\
             ["@humanwhocodes/module-importer", "npm:1.0.1"],\
@@ -2234,7 +2234,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["doctrine", "npm:3.0.0"],\
             ["escape-string-regexp", "npm:4.0.0"],\
             ["eslint-scope", "npm:7.1.1"],\
-            ["eslint-utils", "virtual:da99c7e4695a5fca5898fad31d2872f7fe46acc9506643f9acaa2915e169293c951732a239e9f38aa784a4d9e0c1021cee45cb2a8bcf8008a11e40816a14adaa#npm:3.0.0"],\
+            ["eslint-utils", "virtual:ce390f6a3f485d617e3b348339c56730c4c095a916405f20c5e9ffb3d90e981e5a3936fe6ffe116d1ab20e8802d84b6e7025bc0b2b95bffc5b1af4e2cfeccf25#npm:3.0.0"],\
             ["eslint-visitor-keys", "npm:3.3.0"],\
             ["espree", "npm:9.4.1"],\
             ["esquery", "npm:1.4.0"],\
@@ -2285,12 +2285,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:da99c7e4695a5fca5898fad31d2872f7fe46acc9506643f9acaa2915e169293c951732a239e9f38aa784a4d9e0c1021cee45cb2a8bcf8008a11e40816a14adaa#npm:3.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/eslint-utils-virtual-e17c8db5e4/0/cache/eslint-utils-npm-3.0.0-630b3a4013-0668fe02f5.zip/node_modules/eslint-utils/",\
+        ["virtual:ce390f6a3f485d617e3b348339c56730c4c095a916405f20c5e9ffb3d90e981e5a3936fe6ffe116d1ab20e8802d84b6e7025bc0b2b95bffc5b1af4e2cfeccf25#npm:3.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/eslint-utils-virtual-c1905d128f/0/cache/eslint-utils-npm-3.0.0-630b3a4013-0668fe02f5.zip/node_modules/eslint-utils/",\
           "packageDependencies": [\
-            ["eslint-utils", "virtual:da99c7e4695a5fca5898fad31d2872f7fe46acc9506643f9acaa2915e169293c951732a239e9f38aa784a4d9e0c1021cee45cb2a8bcf8008a11e40816a14adaa#npm:3.0.0"],\
+            ["eslint-utils", "virtual:ce390f6a3f485d617e3b348339c56730c4c095a916405f20c5e9ffb3d90e981e5a3936fe6ffe116d1ab20e8802d84b6e7025bc0b2b95bffc5b1af4e2cfeccf25#npm:3.0.0"],\
             ["@types/eslint", null],\
-            ["eslint", "npm:8.31.0"],\
+            ["eslint", "npm:8.32.0"],\
             ["eslint-visitor-keys", "npm:2.1.0"]\
           ],\
           "packagePeers": [\
@@ -2992,8 +2992,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["kana", "workspace:."],\
             ["@keyv/mongo", "npm:2.1.8"],\
-            ["@sapphire/discord.js-utilities", "npm:6.0.0"],\
-            ["@sapphire/framework", "npm:4.0.1"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.1"],\
+            ["@sapphire/framework", "npm:4.0.2"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/plugin-hmr", "npm:2.0.0"],\
             ["@sapphire/plugin-logger", "npm:3.0.1"],\
@@ -3005,13 +3005,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord-api-types", "npm:0.37.28"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
-            ["eslint", "npm:8.31.0"],\
+            ["eslint", "npm:8.32.0"],\
             ["keyv", "npm:4.5.2"],\
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.2.3"],\
-            ["whatsapp-web.js", "https://github.com/thaddeuskkr/whatsapp-web.js.git#commit=67c2290d43faa2392f0dcbe71f6466ef3383050c"]\
+            ["whatsapp-web.js", "npm:1.19.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4420,10 +4420,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["whatsapp-web.js", [\
-        ["https://github.com/thaddeuskkr/whatsapp-web.js.git#commit=67c2290d43faa2392f0dcbe71f6466ef3383050c", {\
-          "packageLocation": "./.yarn/cache/whatsapp-web.js-https-5903b3c315-f1c26e7f5a.zip/node_modules/whatsapp-web.js/",\
+        ["npm:1.19.2", {\
+          "packageLocation": "./.yarn/cache/whatsapp-web.js-npm-1.19.2-b951c3ff7a-cd886a9f71.zip/node_modules/whatsapp-web.js/",\
           "packageDependencies": [\
-            ["whatsapp-web.js", "https://github.com/thaddeuskkr/whatsapp-web.js.git#commit=67c2290d43faa2392f0dcbe71f6466ef3383050c"],\
+            ["whatsapp-web.js", "npm:1.19.2"],\
             ["@pedroslopez/moduleraid", "npm:5.0.2"],\
             ["archiver", "npm:5.3.1"],\
             ["fluent-ffmpeg", "npm:2.1.2"],\
