@@ -17,7 +17,8 @@ WORKDIR /kana
 
 RUN apt-get update && apt-get install chromium-browser -y --no-install-recommends
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
+ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
 
 # Copy files in logical layer order
 COPY --from=builder /deploy/dependencies .
