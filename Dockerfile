@@ -18,7 +18,7 @@ RUN yarn prod-install /deploy/dependencies
 FROM node:slim AS runner
 WORKDIR /kana
 
-RUN apt-get update && apt-get install chromium-browser -y --no-install-recommends
+RUN apt-get update && apt-get install chromium -y --no-install-recommends
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
 ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
