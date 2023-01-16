@@ -97,6 +97,7 @@ export class Dispatcher {
         this.repeat = 'off';
         this.current = null;
         this.stopped = false;
+        this.previous = [];
         let _notifiedOnce = false;
         let _errorHandler = data => {
             if ((data instanceof Error || data instanceof Object) && data.code !== 4014) container.logger.error(data);
@@ -129,6 +130,7 @@ export class Dispatcher {
                 if (this.repeat === 'one') this.queue.unshift(this.current);
                 if (this.repeat === 'all' && !this.current.skipped) this.queue.push(this.current);
                 if (this.nowPlayingMessage && this.repeat !== 'one') {
+                    this.previous.unshift(this.current);
                     const msgs = await this.channel.messages.fetch({ limit: 1, force: true });
                     if (msgs.first().id === this.nowPlayingMessage.id) return this.play();
                     else {
