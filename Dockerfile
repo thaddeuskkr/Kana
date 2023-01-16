@@ -3,7 +3,7 @@ WORKDIR /kana
 COPY . . 
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="true"
-ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium-browser"
+ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium"
 
 RUN yarn || (cat /tmp/*/build.log; exit 1)
 
