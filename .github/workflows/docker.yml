@@ -1,0 +1,17 @@
+name: Build Docker image and publish
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: thaddeuskkr/kana:latest
+          context: .
+          file: ./Dockerfile
+          platforms: linux/arm64,linux/amd64
