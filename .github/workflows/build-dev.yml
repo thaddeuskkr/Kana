@@ -3,15 +3,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'src/**'
-      - 'package*.json'
-      - 'Dockerfile'
-      - '.github/workflows/build**'
-    paths-ignore:
-      - 'src/commands/**'
-      - 'src/listeners/**'
-      - 'src/preconditions/**' 
       
 jobs:
   build:
