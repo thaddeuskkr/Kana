@@ -24,7 +24,7 @@ jobs:
       -
         name: Build image
         run: |
-          docker build . --tag ghcr.io/thaddeuskkr/kana:dev --tag ghcr.io/thaddeuskkr/kana:${{ vars.GITHUB_SHA }}
+          docker build . --tag ghcr.io/thaddeuskkr/kana:dev --tag ghcr.io/thaddeuskkr/kana:${{ env.GITHUB_SHA }}
           docker push ghcr.io/thaddeuskkr/kana:dev
-          docker push ghcr.io/thaddeuskkr/kana:${{ vars.GITHUB_SHA }}
+          docker push ghcr.io/thaddeuskkr/kana:${{ env.GITHUB_SHA }}
 
