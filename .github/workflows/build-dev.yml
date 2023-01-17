@@ -7,11 +7,11 @@ on:
       - 'src/**'
       - 'package*.json'
       - 'Dockerfile'
-      - '.github/workflows/build*.yml'
+      - '.github/workflows/build**'
     paths-ignore:
-      - '!src/commands/**'
-      - '!src/listeners/**'
-      - '!src/preconditions/**' 
+      - 'src/commands/**'
+      - 'src/listeners/**'
+      - 'src/preconditions/**' 
       
 jobs:
   build:
