@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v2
       # Add your test steps here if needed...
       - name: Build container
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v3
         with:
           username: thaddeuskkr
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: thaddeuskkr/kana
+          repository: ${{ vars.GITHUB_REPOSITORY }}/master
           tag_with_sha: true
