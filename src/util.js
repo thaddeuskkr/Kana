@@ -33,6 +33,10 @@ export class Util {
             color = '#f38ba8';
             emoji = container.config.emojis.error;
             break;
+        case 'loading':
+            color = '#a6adc8';
+            emoji = container.config.emojis.loading;
+            break;
         case 'info':
             color = '#cba6f7';
         }
