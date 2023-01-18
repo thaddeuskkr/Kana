@@ -1433,6 +1433,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "axios@npm:0.24.0"
+  dependencies:
+    follow-redirects: ^1.14.4
+  checksum: 468cf496c08a6aadfb7e699bebdac02851e3043d4e7d282350804ea8900e30d368daa6e3cd4ab83b8ddb5a3b1e17a5a21ada13fc9cebd27b74828f47a4236316
+  languageName: node
+  linkType: hard
+
 "balanced-match@npm:^1.0.0":
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
@@ -1646,7 +1655,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.9":
+"cheerio@npm:^1.0.0-rc.10":
   version: 1.0.0-rc.12
   resolution: "cheerio@npm:1.0.0-rc.12"
   dependencies:
@@ -2292,6 +2301,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.14.4":
+  version: 1.15.2
+  resolution: "follow-redirects@npm:1.15.2"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: faa66059b66358ba65c234c2f2a37fcec029dc22775f35d9ad6abac56003268baf41e55f9ee645957b32c7d9f62baf1f0b906e68267276f54ec4b4c597c2b190
+  languageName: node
+  linkType: hard
+
 "fs-constants@npm:^1.0.0":
   version: 1.0.0
   resolution: "fs-constants@npm:1.0.0"
@@ -2373,13 +2392,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"genius-lyrics@npm:^4.4.2":
-  version: 4.4.2
-  resolution: "genius-lyrics@npm:4.4.2"
+"genius-discord-lyrics@https://github.com/thaddeuskkr/genius-discord-lyrics":
+  version: 1.0.5
+  resolution: "genius-discord-lyrics@https://github.com/thaddeuskkr/genius-discord-lyrics.git#commit=973c0b659527d4e08d602b3950a03494a186aafc"
   dependencies:
-    cheerio: ^1.0.0-rc.9
-    undici: ^5.8.2
-  checksum: df7b1963b34f41b39a4274ffed31c72867cb97f84bf9ae8d32824304f7b572669cd8c4bcbc7f54adf419c79e42f0fbb282d93b278c1f2a69ac3737d1b31ac6b6
+    axios: ^0.24.0
+    cheerio: ^1.0.0-rc.10
+  checksum: 8461130618aaf6fbaaffff19abac9a2b81c9100b094044ec850dddfaf682ffc73130f22219bc8bdd29a8e0d8a7e85ec2f29f4ee5ead231d1dc4227b061690564
   languageName: node
   linkType: hard
 
@@ -2746,7 +2765,7 @@ __metadata:
     discord.js: ^14.7.1
     dotenv: ^16.0.3
     eslint: ^8.32.0
-    genius-lyrics: ^4.4.2
+    genius-discord-lyrics: "https://github.com/thaddeuskkr/genius-discord-lyrics"
     keyv: ^4.5.2
     lodash: ^4.17.21
     pretty-ms: ^8.0.0
@@ -3935,15 +3954,6 @@ __metadata:
   dependencies:
     busboy: ^1.6.0
   checksum: 7a076e44d84b25844b4eb657034437b8b9bb91f17d347de474fdea1d4263ce7ae9406db79cd30de5642519277b4893f43073258bcc8fed420b295da3fdd11b26
-  languageName: node
-  linkType: hard
-
-"undici@npm:^5.8.2":
-  version: 5.15.0
-  resolution: "undici@npm:5.15.0"
-  dependencies:
-    busboy: ^1.6.0
-  checksum: cdc03ceff8d2b76a5ae08dc48d0b9d44dcb970f6e89e8a3cfe7031b9351dd3c90b223c143565c153a5f1165cd573aae1b128e6b9f557b4af4eb36da337a2a345
   languageName: node
   linkType: hard
 

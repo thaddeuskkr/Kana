@@ -43,7 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.32.0"],\
-            ["genius-lyrics", "npm:4.4.2"],\
+            ["genius-discord-lyrics", "https://github.com/thaddeuskkr/genius-discord-lyrics.git#commit=973c0b659527d4e08d602b3950a03494a186aafc"],\
             ["keyv", "npm:4.5.2"],\
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
@@ -1647,6 +1647,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["axios", [\
+        ["npm:0.24.0", {\
+          "packageLocation": "./.yarn/cache/axios-npm-0.24.0-39e5c1e79e-468cf496c0.zip/node_modules/axios/",\
+          "packageDependencies": [\
+            ["axios", "npm:0.24.0"],\
+            ["follow-redirects", "virtual:39e5c1e79ea63134f0cf339f4463df92854aaf708a45210afd29a0b4b9f67f95b34a1abbcabaae6d0033ad99a1d5f690ab51ed8e5d3283b87ccbc3a9ab3ec05f#npm:1.15.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["balanced-match", [\
         ["npm:1.0.2", {\
           "packageLocation": "./.yarn/cache/balanced-match-npm-1.0.2-a53c126459-9706c088a2.zip/node_modules/balanced-match/",\
@@ -2635,6 +2645,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["follow-redirects", [\
+        ["npm:1.15.2", {\
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.2-1ec1dd82be-faa66059b6.zip/node_modules/follow-redirects/",\
+          "packageDependencies": [\
+            ["follow-redirects", "npm:1.15.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:39e5c1e79ea63134f0cf339f4463df92854aaf708a45210afd29a0b4b9f67f95b34a1abbcabaae6d0033ad99a1d5f690ab51ed8e5d3283b87ccbc3a9ab3ec05f#npm:1.15.2", {\
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-2c858e005e/0/cache/follow-redirects-npm-1.15.2-1ec1dd82be-faa66059b6.zip/node_modules/follow-redirects/",\
+          "packageDependencies": [\
+            ["follow-redirects", "virtual:39e5c1e79ea63134f0cf339f4463df92854aaf708a45210afd29a0b4b9f67f95b34a1abbcabaae6d0033ad99a1d5f690ab51ed8e5d3283b87ccbc3a9ab3ec05f#npm:1.15.2"],\
+            ["@types/debug", null],\
+            ["debug", null]\
+          ],\
+          "packagePeers": [\
+            "@types/debug",\
+            "debug"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["fs-constants", [\
         ["npm:1.0.0", {\
           "packageLocation": "./.yarn/cache/fs-constants-npm-1.0.0-59576b2177-18f5b71837.zip/node_modules/fs-constants/",\
@@ -2715,13 +2747,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["genius-lyrics", [\
-        ["npm:4.4.2", {\
-          "packageLocation": "./.yarn/cache/genius-lyrics-npm-4.4.2-54cb1f7c38-df7b1963b3.zip/node_modules/genius-lyrics/",\
+      ["genius-discord-lyrics", [\
+        ["https://github.com/thaddeuskkr/genius-discord-lyrics.git#commit=973c0b659527d4e08d602b3950a03494a186aafc", {\
+          "packageLocation": "./.yarn/cache/genius-discord-lyrics-https-8ddfb2dff0-8461130618.zip/node_modules/genius-discord-lyrics/",\
           "packageDependencies": [\
-            ["genius-lyrics", "npm:4.4.2"],\
-            ["cheerio", "npm:1.0.0-rc.12"],\
-            ["undici", "npm:5.15.0"]\
+            ["genius-discord-lyrics", "https://github.com/thaddeuskkr/genius-discord-lyrics.git#commit=973c0b659527d4e08d602b3950a03494a186aafc"],\
+            ["axios", "npm:0.24.0"],\
+            ["cheerio", "npm:1.0.0-rc.12"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3146,7 +3178,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.32.0"],\
-            ["genius-lyrics", "npm:4.4.2"],\
+            ["genius-discord-lyrics", "https://github.com/thaddeuskkr/genius-discord-lyrics.git#commit=973c0b659527d4e08d602b3950a03494a186aafc"],\
             ["keyv", "npm:4.5.2"],\
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
@@ -4494,14 +4526,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/undici-npm-5.14.0-747f9fac1d-7a076e44d8.zip/node_modules/undici/",\
           "packageDependencies": [\
             ["undici", "npm:5.14.0"],\
-            ["busboy", "npm:1.6.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:5.15.0", {\
-          "packageLocation": "./.yarn/cache/undici-npm-5.15.0-e705a2d41f-cdc03ceff8.zip/node_modules/undici/",\
-          "packageDependencies": [\
-            ["undici", "npm:5.15.0"],\
             ["busboy", "npm:1.6.0"]\
           ],\
           "linkType": "HARD"\

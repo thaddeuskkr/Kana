@@ -17,7 +17,7 @@
 */
 
 import { Command } from '@sapphire/framework';
-import Genius from 'genius-lyrics';
+import { GeniusLyrics } from 'genius-discord-lyrics';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 
 export class LyricsCommand extends Command {
@@ -51,11 +51,10 @@ export class LyricsCommand extends Command {
         let query = interaction.options.getString('query');
         if (!query && !dispatcher?.current) return interaction.reply({ embeds: [this.container.util.embed('error', 'You did not provide a query and there is nothing playing.')] });
         if (!query) query = `${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')}`; // most common things to replace
-        const Client = new Genius.Client();
-        const searches = await Client.songs.search(query);
-        if (!searches.length) return interaction.editReply({ embeds: [this.container.util.embed('error', `No results for \`${query}\`.${!interaction.options.getString('query') ? ' Try searching using a query instead.' : ''}`)] });
-        const rawLyrics = await searches[0].lyrics();
-        const lyrics = rawLyrics.replace(/([^\n\n])\[/g, '$1\n\n['); // Maybe format the stuff in square brackets.
+        const genius = new GeniusLyrics(this.container.config.geniusKey);
+        const res = await genius.fetchLyrics(query);
+        if (!res || res instanceof Error) return interaction.editReply({ embeds: [this.container.util.embed('error', `No results for \`${query}\`.${!interaction.options.getString('query') ? ' Try searching using a query instead.' : ''}`)] });
+        const lyrics = res.replace(/([^\n\n])\[/g, '$1\n\n['); // Maybe format the stuff in square brackets.
         const lyr = LyricsCommand.splitLyrics(lyrics);
         const pm = new PaginatedMessage();
         for (const page of lyr) {
@@ -75,11 +74,10 @@ export class LyricsCommand extends Command {
         let query = args.join(' ');
         if (!query && !dispatcher?.current) return await msg.reply('You did not provide a query and there is nothing playing.');
         query = query || `${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')}`; // most common things to replace
-        const Client = new Genius.Client();
-        const searches = await Client.songs.search(query);
-        if (!searches.length) return msg.reply(`No results for _${query}_.${!args.length ? ' Try searching using a query instead.' : ''}`);
-        const rawLyrics = await searches[0].lyrics();
-        const lyrics = rawLyrics.replace(/([^\n\n])\[/g, '$1\n\n['); // Maybe format the stuff in square brackets.
+        const genius = new GeniusLyrics(this.container.config.geniusKey);
+        const res = await genius.fetchLyrics(query);
+        if (!res || res instanceof Error) return msg.reply(`No results for _${query}_.${!args.length ? ' Try searching using a query instead.' : ''}`);
+        const lyrics = res.replace(/([^\n\n])\[/g, '$1\n\n['); // Maybe format the stuff in square brackets.
         let para = lyrics.split(/\[/g);
         for (let i = 0; i < para.length; i++) {
             para[i] = para[i].trim();
