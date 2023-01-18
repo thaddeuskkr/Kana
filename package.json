@@ -40,6 +40,7 @@
     "discord-api-types": "^0.37.28",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
+    "genius-lyrics": "^4.4.2",
     "keyv": "^4.5.2",
     "lodash": "^4.17.21",
     "pretty-ms": "^8.0.0",
