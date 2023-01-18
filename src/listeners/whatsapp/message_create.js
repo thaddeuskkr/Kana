@@ -73,7 +73,7 @@ export class MessageCreateListener extends Listener {
         
             // Preconditions
             if (voiceChannels.length > 0) voice = true;
-            for (const channels of voiceChannels) if (channels.guild.members.me.voice.channel?.id && (channels.members.find((member) => member.id === discordUser.id) && channels.members.find((member) => member.id === this.container.client.user.id))) sameVoice = true;
+            for (const channels of voiceChannels) if (channels.guild.members.cache.get(this.container.client.user.id).voice.channelId == null || (channels.members.find((member) => member.id === discordUser.id) && channels.members.find((member) => member.id === this.container.client.user.id))) sameVoice = true;
             defaultVc = voiceChannels[0];
             dispatcher = voiceChannels[0] ? this.container.queue.get(defaultVc?.guild?.id) : null;
         }
