@@ -163,8 +163,10 @@ export class PlayCommand extends Command {
         return interaction.respond(search.tracks.map((track) => ({ name: PlayCommand.truncate(`${track.info.title} - ${track.info.author}`, 97), value: track.info.uri })));
     }
 
-    async whatsappRun({ args, msg, discordUser, voiceChannels }) {
+    async whatsappRun({ args, msg, discordUser, voiceChannels, voice, sameVoice }) {
         if (!discordUser) return await msg.reply('You are not linked to a Discord account. Use ```/link``` to link your WhatsApp account to your Discord account.');
+        if (voice === false) return await msg.reply('You are not in a voice channel.');
+        if (sameVoice === false) return await msg.reply('You are not in the same voice channel as the bot.');
         let query = args.join(' ');
         const next = (query.includes('--playnext') || args.includes('-next')) || false;
         if (next === true) query.replace('--playnext', '').replace('-next', '');
