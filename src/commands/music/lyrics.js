@@ -17,8 +17,8 @@
 */
 
 import { Command } from '@sapphire/framework';
-import { GeniusLyrics } from 'genius-discord-lyrics';
-import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+// import { GeniusLyrics } from 'genius-discord-lyrics';
+// import { PaginatedMessage } from '@sapphire/discord.js-utilities';
 
 export class LyricsCommand extends Command {
     constructor(context, options) {
@@ -46,6 +46,8 @@ export class LyricsCommand extends Command {
     }
     
     async chatInputRun(interaction) {
+        return interaction.reply('*The lyrics command is currently not working.*');
+        /*
         await interaction.reply({ embeds: [this.container.util.embed('loading', 'Fetching lyrics...')] });
         const dispatcher = this.container.queue.get(interaction.guildId);
         let query = interaction.options.getString('query');
@@ -68,7 +70,10 @@ export class LyricsCommand extends Command {
             });
         }
         pm.run(interaction);
+        */
     }
+
+    /*
 
     async whatsappRun({ msg, args, dispatcher}) {
         let query = args.join(' ');
@@ -85,6 +90,8 @@ export class LyricsCommand extends Command {
         const ly = para.join('\n\n[').trim();
         msg.reply(`*Lyrics${!args.length ? ` (${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')})`: ' (Custom query)'}*\n${ly}`);
     }
+
+    */
 
     static splitLyrics (lyrics) {
         let para = lyrics.split(/\[/g);
