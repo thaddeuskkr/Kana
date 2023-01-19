@@ -18,8 +18,7 @@
 
 import { Command } from '@sapphire/framework';
 import { PaginatedMessage } from '@sapphire/discord.js-utilities';
-import axios from 'axios';
-import { decode } from 'html-entities';
+import lyricsFinder from '@jeve/lyrics-finder';
 
 export class LyricsCommand extends Command {
     constructor(context, options) {
@@ -52,8 +51,7 @@ export class LyricsCommand extends Command {
         let query = interaction.options.getString('query');
         if (!query && !dispatcher?.current) return interaction.reply({ embeds: [this.container.util.embed('error', 'You did not provide a query and there is nothing playing.')] });
         if (!query) query = `${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')}`; // most common things to replace
-
-        const lyrics = await LyricsCommand.searchLyrics(query);
+        const lyrics = await lyricsFinder.LyricsFinder(query);
         if (!lyrics || lyrics instanceof Error) return interaction.editReply({ embeds: [this.container.util.embed('error', `No results for \`${query}\`.${!interaction.options.getString('query') ? ' Try searching using a query instead.' : ''}`)] });
         const lyr = LyricsCommand.splitLyrics(lyrics);
         const pm = new PaginatedMessage();
@@ -93,30 +91,6 @@ export class LyricsCommand extends Command {
             pages.push(page);
         }
         return pages;
-    }
-
-    static async searchLyrics (query) {
-        query = query
-            .toLowerCase()
-            .replace(new RegExp(/((\[|\()(?!.*?(remix|edit|remake)).*?(\]|\))|\/+|-+| x |,|"|video oficial|official lyric video| ft.?|\|+|yhlqmdlg|x100pre|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF]|\u274C)/, 'g', ), '')
-            .replace(new RegExp(/  +/, 'g'), ' ')
-            .trim();
-        try {
-            const html = await axios.get(`https://www.google.com/search?q=${encodeURIComponent(query)}+lyrics`, {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4918.0 Safari/537.36',
-                    referer: 'https://www.google.com/'
-                }
-            });
-            const data = html.data;
-            return decode(data
-                .split('</div></div></div></div><div class="hwc"><div class="BNeawe tAd8D AP7Wnd"><div><div class="BNeawe tAd8D AP7Wnd">')[1]
-                .split('</div></div></div></div></div><div><span class="hwc"><div class="BNeawe uEec3 AP7Wnd">')[0]
-                .replace(new RegExp(/<span dir="rtl">|<\/span>/, 'g'), '')
-                .trim());
-        } catch (e) {
-            return e;
-        }
     }
 }
 
