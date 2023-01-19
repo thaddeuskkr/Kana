@@ -17,8 +17,9 @@
 */
 
 import { Command } from '@sapphire/framework';
-// import { GeniusLyrics } from 'genius-discord-lyrics';
-// import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+import { PaginatedMessage } from '@sapphire/discord.js-utilities';
+import axios from 'axios';
+import { decode } from 'html-entities';
 
 export class LyricsCommand extends Command {
     constructor(context, options) {
@@ -46,8 +47,111 @@ export class LyricsCommand extends Command {
     }
     
     async chatInputRun(interaction) {
-        return interaction.reply('*The lyrics command is currently not working.*');
-        /*
+        await interaction.reply({ embeds: [this.container.util.embed('loading', 'Fetching lyrics...')] });
+        const dispatcher = this.container.queue.get(interaction.guildId);
+        let query = interaction.options.getString('query');
+        if (!query && !dispatcher?.current) return interaction.reply({ embeds: [this.container.util.embed('error', 'You did not provide a query and there is nothing playing.')] });
+        if (!query) query = `${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')}`; // most common things to replace
+
+        const lyrics = await LyricsCommand.searchLyrics(query);
+        if (!lyrics || lyrics instanceof Error) return interaction.editReply({ embeds: [this.container.util.embed('error', `No results for \`${query}\`.${!interaction.options.getString('query') ? ' Try searching using a query instead.' : ''}`)] });
+        const lyr = LyricsCommand.splitLyrics(lyrics);
+        const pm = new PaginatedMessage();
+        for (const page of lyr) {
+            pm.addPageEmbed((embed) => {
+                embed.setAuthor({ name: `Lyrics${!interaction.options.getString('query') ? '' : ' (Custom query)'}` })
+                    .setTitle(query)
+                    .setDescription(page)
+                    .setFooter(this.container.config.footer)
+                    .setColor('#cba6f7');
+                return embed;
+            });
+        }
+        pm.run(interaction);
+    }
+
+    async whatsappRun({ msg, args, dispatcher}) {
+        let query = args.join(' ');
+        if (!query && !dispatcher?.current) return await msg.reply('You did not provide a query and there is nothing playing.');
+        query = query || `${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')}`; // most common things to replace
+        const lyrics = await LyricsCommand.searchLyrics(query);
+        if (!lyrics || lyrics instanceof Error) return msg.reply(`No results for _${query}_.${!args.length ? ' Try searching using a query instead.' : ''}`);
+        else msg.reply(`*Lyrics${!args.length ? ` (${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')})`: ' (Custom query)'}*\n${lyrics}`);
+    }
+
+    static splitLyrics (lyrics) {
+        const maxCharsInAPage = 2000;
+        const lineArray = lyrics.split('\n');
+        const pages = [];
+        for (let i = 0; i < lineArray.length; i++) {
+            let page = '';
+            while (lineArray[i].length + page.length < maxCharsInAPage) {
+                page += `${lineArray[i]}\n`;
+                i++;
+                if (i >= lineArray.length) break;
+            }
+            pages.push(page);
+        }
+        return pages;
+    }
+
+    static async searchLyrics (query) {
+        query = query
+            .toLowerCase()
+            .replace(new RegExp(/((\[|\()(?!.*?(remix|edit|remake)).*?(\]|\))|\/+|-+| x |,|"|video oficial|official lyric video| ft.?|\|+|yhlqmdlg|x100pre|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF]|\u274C)/, 'g', ), '')
+            .replace(new RegExp(/  +/, 'g'), ' ')
+            .trim();
+        try {
+            const html = await axios.get(`https://www.google.com/search?q=${encodeURIComponent(query)}+lyrics`, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4918.0 Safari/537.36',
+                    referer: 'https://www.google.com/'
+                }
+            });
+            const data = html.data;
+            return decode(data
+                .split('</div></div></div></div><div class="hwc"><div class="BNeawe tAd8D AP7Wnd"><div><div class="BNeawe tAd8D AP7Wnd">')[1]
+                .split('</div></div></div></div></div><div><span class="hwc"><div class="BNeawe uEec3 AP7Wnd">')[0]
+                .replace(new RegExp(/<span dir="rtl">|<\/span>/, 'g'), '')
+                .trim());
+        } catch (e) {
+            return e;
+        }
+    }
+}
+
+// The code below works, if you are using a network that is not detected by Cloudflare's anti-bot system.
+// You will, however, need to install these packages, and it will be slower than the currently used method.
+// npm i genius-discord-lyrics@https://github.com/thaddeuskkr/genius-discord-lyrics
+/*
+import { GeniusLyrics } from 'genius-discord-lyrics';
+
+export class LyricsCommand extends Command {
+    constructor(context, options) {
+        super(context, {
+            ...options,
+            name: 'lyrics',
+            description: 'Shows lyrics for the currently playing track or a specified one.',
+            preconditions: []
+        });
+    }
+
+    registerApplicationCommands(registry) {
+        registry.registerChatInputCommand((builder) => 
+            builder
+                .setName(this.name)
+                .setDescription(this.description)
+                .setDMPermission(false)
+                .addStringOption(option => 
+                    option
+                        .setName('query')
+                        .setDescription('What track would you like to get lyrics for?')
+                        .setRequired(false)
+                )
+        );
+    }
+    
+    async chatInputRun(interaction) {
         await interaction.reply({ embeds: [this.container.util.embed('loading', 'Fetching lyrics...')] });
         const dispatcher = this.container.queue.get(interaction.guildId);
         let query = interaction.options.getString('query');
@@ -70,10 +174,7 @@ export class LyricsCommand extends Command {
             });
         }
         pm.run(interaction);
-        */
     }
-
-    /*
 
     async whatsappRun({ msg, args, dispatcher}) {
         let query = args.join(' ');
@@ -90,8 +191,6 @@ export class LyricsCommand extends Command {
         const ly = para.join('\n\n[').trim();
         msg.reply(`*Lyrics${!args.length ? ` (${dispatcher.current.info.title.replace('(Lyrics)', '')} - ${dispatcher.current.info.author.replace(' - Topic', '')})`: ' (Custom query)'}*\n${ly}`);
     }
-
-    */
 
     static splitLyrics (lyrics) {
         let para = lyrics.split(/\[/g);
@@ -114,3 +213,4 @@ export class LyricsCommand extends Command {
         return pages;
     }
 }
+*/
