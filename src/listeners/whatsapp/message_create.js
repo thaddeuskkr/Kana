@@ -29,7 +29,10 @@ export class MessageCreateListener extends Listener {
         });
     }
     async run(msg) {
-        if (!msg.body || msg.from === container.whatsapp.info.wid._serialized) return;
+        if (msg.from === container.whatsapp.info.wid._serialized) return;
+        const chat = await msg.getChat();
+        await chat.sendSeen(); // Marks all messages as read
+        if (!msg.body) return;
         let chatPrefixes = await container.db.get(`${msg.from}-prefix`);
         if (!chatPrefixes) {
             await container.db.set(`${msg.from}-prefix`, []);
