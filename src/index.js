@@ -1,6 +1,6 @@
 /*
     Kana, a Discord bot with WhatsApp integrations and commands.
-    Copyright (C) 2022 | thaddeus kuah <contact@tkkr.one>
+    Copyright (C) 2023 | thaddeus kuah <contact@tkkr.one>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
