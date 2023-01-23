@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/ratelimits", "npm:2.4.5"],\
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["common-tags", "npm:1.8.2"],\
-            ["discord-api-types", "npm:0.37.28"],\
+            ["discord-api-types", "npm:0.37.29"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.32.0"],\
@@ -2125,6 +2125,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord-api-types", "npm:0.37.28"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:0.37.29", {\
+          "packageLocation": "./.yarn/cache/discord-api-types-npm-0.37.29-cebf4f0544-f523f40e95.zip/node_modules/discord-api-types/",\
+          "packageDependencies": [\
+            ["discord-api-types", "npm:0.37.29"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["discord.js", [\
@@ -3049,7 +3056,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/ratelimits", "npm:2.4.5"],\
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["common-tags", "npm:1.8.2"],\
-            ["discord-api-types", "npm:0.37.28"],\
+            ["discord-api-types", "npm:0.37.29"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.32.0"],\
