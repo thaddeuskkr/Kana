@@ -2657,7 +2657,7 @@ __metadata:
     lodash: ^4.17.21
     pretty-ms: ^8.0.0
     qrcode-terminal: ^0.12.0
-    shoukaku: ^3.3.0
+    shoukaku: ^3.3.1
     whatsapp-web.js: ^1.19.2
   languageName: unknown
   linkType: soft
@@ -3538,13 +3538,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shoukaku@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "shoukaku@npm:3.3.0"
+"shoukaku@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "shoukaku@npm:3.3.1"
   dependencies:
     node-fetch: ^2.6.7
     ws: ^8.12.0
-  checksum: 5386589dcc1e71696ae553b41abd900b376c7fe35ddb08d4a4d5bce69f4ce602f5d3124accf432400a2934ea106bd249a36589558ef2a607f66a8add43f5e7bc
+  checksum: 384bc82ad8f3c364a4a477d19422a8a3a53a51273aa11576dc0770b0a38ce3ff7dcb33a172cf84948b19e935def00151c1558c273df95a4e30f2c38c0efebd86
   languageName: node
   linkType: hard
 
