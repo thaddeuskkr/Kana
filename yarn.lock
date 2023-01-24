@@ -2664,7 +2664,7 @@ __metadata:
     lodash: ^4.17.21
     pretty-ms: ^8.0.0
     qrcode-terminal: ^0.12.0
-    shoukaku: ^3.3.0
+    shoukaku: "https://github.com/Deivu/Shoukaku.git#master"
     whatsapp-web.js: ^1.19.2
   languageName: unknown
   linkType: soft
@@ -3545,13 +3545,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shoukaku@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "shoukaku@npm:3.3.0"
+"shoukaku@https://github.com/Deivu/Shoukaku.git#master":
+  version: 4.0.0-dev
+  resolution: "shoukaku@https://github.com/Deivu/Shoukaku.git#commit=cfd4916df4b1882d81f0b3b711ef3f7d67c37904"
   dependencies:
     node-fetch: ^2.6.7
     ws: ^8.12.0
-  checksum: 5386589dcc1e71696ae553b41abd900b376c7fe35ddb08d4a4d5bce69f4ce602f5d3124accf432400a2934ea106bd249a36589558ef2a607f66a8add43f5e7bc
+  checksum: 145eeeeaeb3b56433053aee5b9a3f6c8935dbed80204338d210b3186fca1e9b121c8f8fa3dc702d06ec4ad1df447649ec6bee1eebffd76fb152216a429ece97a
   languageName: node
   linkType: hard
 
