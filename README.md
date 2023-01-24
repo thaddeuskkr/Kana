@@ -1,8 +1,4 @@
-<h1 align="center">Kana</h1>
-<p align="center">
-Kana is a clean, feature-rich Discord bot, and one of the bots (if not the only bot) that integrate with WhatsApp. Coded in <b>Node.js</b> and uses the <b>Sapphire Framework</b> and <b>discord.js</b> to bring you optimal performance, for free.<br>
-<i>A continuation of Kohana.</i>
-</p>  
+![Banner](assets/kana-banner.png)
 
 ### Features
 - **WhatsApp:** Most commands that Kana currently has can be run in WhatsApp, as well as Discord, after doing a simple one-time linking of both accounts. In a League of Legends (ranked) game and don't want to tab out? Just use your phone to WhatsApp the command to Kana! (an absolutely true and real example from past experiences)  
@@ -19,3 +15,26 @@ Kana is a clean, feature-rich Discord bot, and one of the bots (if not the only 
 
 ### Self-hosting
 Self hosting Kana is no longer supported.
+
+### License
+```
+Kana, a Discord bot with WhatsApp integrations and commands.
+Copyright (C) 2023 | thaddeus kuah <contact@tkkr.one>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
+
+<p align="center">
+<i><b>Kana is a continuation of Kohana.</i></b>
+</p>  
