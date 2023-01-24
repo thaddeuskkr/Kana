@@ -5,7 +5,7 @@ Kana is a clean, feature-rich Discord bot, and one of the bots (if not the only 
 </p>  
 
 ### Features
-- **WhatsApp:** Most commands that Kana currently has can be run in WhatsApp, as well as Discord, after doing a simple one-time linking of both accounts.  
+- **WhatsApp:** Most commands that Kana currently has can be run in WhatsApp, as well as Discord, after doing a simple one-time linking of both accounts. In a League of Legends (ranked) game and don't want to tab out? Just use your phone to WhatsApp the command to Kana! (an absolutely true and real example from past experiences)  
 - **Clean:** There are absolutely no premium subscriptions, which also means no advertisements for them in footers or images of embeds. We also try not to overwhelm the user with information every time a command is executed.  
 - **Modern:** Uses the latest version of discord.js and the Sapphire framework, and uses Discord's slash commands, even having autocomplete.  
 - **Free:** Kana is, and always will be, completely free to use. No vote-locked commands, no paywalls, no advertisements.  
