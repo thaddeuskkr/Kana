@@ -21,7 +21,7 @@ export class PreviousCommand extends Command {
     
     async chatInputRun(interaction) {
         const dispatcher = this.container.queue.get(interaction.guildId);
-        await interaction.reply({ embeds: [this.container.util.embed('success', `Returned to the previous track **${dispatcher.current.info.title}** - **${dispatcher.current.info.author}**${dispatcher.repeat === 'one' ? ' and turned off track repeat' : ''}.`)] });
+        await interaction.reply({ embeds: [this.container.util.embed('success', `Returned to the previous track **${dispatcher.previous[0].info.title}** - **${dispatcher.previous[0].info.author}**${dispatcher.repeat === 'one' ? ' and turned off track repeat' : ''}.`)] });
         if (dispatcher.repeat === 'one') dispatcher.repeat = 'off';
         dispatcher.queue.unshift(dispatcher.current);
         dispatcher.queue.unshift(dispatcher.previous[0]);
@@ -33,7 +33,7 @@ export class PreviousCommand extends Command {
         if (voice === false) return await msg.reply('You are not in a voice channel.');
         if (sameVoice === false) return await msg.reply('You are not in the same voice channel as the bot.');
         if (!dispatcher) return await msg.reply('There is nothing playing.');
-        await msg.reply(`Returned to the previous track *${dispatcher.current.info.title}* - *${dispatcher.current.info.author}*${dispatcher.repeat === 'one' ? ' and turned off track repeat' : ''}.`);
+        await msg.reply(`Returned to the previous track *${dispatcher.previous[0].info.title}* - *${dispatcher.previous[0].info.author}*${dispatcher.repeat === 'one' ? ' and turned off track repeat' : ''}.`);
         if (dispatcher.repeat === 'one') dispatcher.repeat = 'off';
         dispatcher.queue.unshift(dispatcher.current);
         dispatcher.queue.unshift(dispatcher.previous[0]);
