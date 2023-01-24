@@ -48,7 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
-            ["shoukaku", "https://github.com/Deivu/Shoukaku.git#commit=cfd4916df4b1882d81f0b3b711ef3f7d67c37904"],\
+            ["shoukaku", "npm:3.3.1"],\
             ["whatsapp-web.js", "npm:1.19.2"]\
           ],\
           "linkType": "SOFT"\
@@ -3064,7 +3064,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
-            ["shoukaku", "https://github.com/Deivu/Shoukaku.git#commit=cfd4916df4b1882d81f0b3b711ef3f7d67c37904"],\
+            ["shoukaku", "npm:3.3.1"],\
             ["whatsapp-web.js", "npm:1.19.2"]\
           ],\
           "linkType": "SOFT"\
@@ -3469,10 +3469,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:2f176ba0c9608c11be66ebc23268125c309a17882570becd1e1d004261001dcfab77ab4f3bb0025e514307f845a8e7d86363c41f38c6299978f55268951fccbf#npm:2.6.8", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-fef42b3f7a/0/cache/node-fetch-npm-2.6.8-ddb8bfc274-91f57be68e.zip/node_modules/node-fetch/",\
+        ["virtual:92f1f2efba45794b813b4ccd19a54a482c97dcf8d08714de1d766b4b3ae44df020c37a2a892d3011cdc1c9be9295bd0546f9ce3d6d92125b6d47d6e969a646a9#npm:2.6.8", {\
+          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-d5d2a41c48/0/cache/node-fetch-npm-2.6.8-ddb8bfc274-91f57be68e.zip/node_modules/node-fetch/",\
           "packageDependencies": [\
-            ["node-fetch", "virtual:2f176ba0c9608c11be66ebc23268125c309a17882570becd1e1d004261001dcfab77ab4f3bb0025e514307f845a8e7d86363c41f38c6299978f55268951fccbf#npm:2.6.8"],\
+            ["node-fetch", "virtual:92f1f2efba45794b813b4ccd19a54a482c97dcf8d08714de1d766b4b3ae44df020c37a2a892d3011cdc1c9be9295bd0546f9ce3d6d92125b6d47d6e969a646a9#npm:2.6.8"],\
             ["@types/encoding", null],\
             ["encoding", null],\
             ["whatwg-url", "npm:5.0.0"]\
@@ -4071,11 +4071,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["shoukaku", [\
-        ["https://github.com/Deivu/Shoukaku.git#commit=cfd4916df4b1882d81f0b3b711ef3f7d67c37904", {\
-          "packageLocation": "./.yarn/cache/shoukaku-https-2f176ba0c9-145eeeeaeb.zip/node_modules/shoukaku/",\
+        ["npm:3.3.1", {\
+          "packageLocation": "./.yarn/cache/shoukaku-npm-3.3.1-92f1f2efba-384bc82ad8.zip/node_modules/shoukaku/",\
           "packageDependencies": [\
-            ["shoukaku", "https://github.com/Deivu/Shoukaku.git#commit=cfd4916df4b1882d81f0b3b711ef3f7d67c37904"],\
-            ["node-fetch", "virtual:2f176ba0c9608c11be66ebc23268125c309a17882570becd1e1d004261001dcfab77ab4f3bb0025e514307f845a8e7d86363c41f38c6299978f55268951fccbf#npm:2.6.8"],\
+            ["shoukaku", "npm:3.3.1"],\
+            ["node-fetch", "virtual:92f1f2efba45794b813b4ccd19a54a482c97dcf8d08714de1d766b4b3ae44df020c37a2a892d3011cdc1c9be9295bd0546f9ce3d6d92125b6d47d6e969a646a9#npm:2.6.8"],\
             ["ws", "virtual:85505ab7e7b582b78950ec0852ea92c077c0337f6f620be03682dd6558ec78eca4f18be1837204260860e01bb383e654c8f0a9ea6ca66d4e420c9d6eed01ed47#npm:8.12.0"]\
           ],\
           "linkType": "HARD"\
@@ -4505,7 +4505,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs-extra", "npm:10.1.0"],\
             ["jsqr", "npm:1.4.0"],\
             ["mime", "npm:3.0.0"],\
-            ["node-fetch", "virtual:2f176ba0c9608c11be66ebc23268125c309a17882570becd1e1d004261001dcfab77ab4f3bb0025e514307f845a8e7d86363c41f38c6299978f55268951fccbf#npm:2.6.8"],\
+            ["node-fetch", "virtual:92f1f2efba45794b813b4ccd19a54a482c97dcf8d08714de1d766b4b3ae44df020c37a2a892d3011cdc1c9be9295bd0546f9ce3d6d92125b6d47d6e969a646a9#npm:2.6.8"],\
             ["node-webpmux", "npm:3.1.3"],\
             ["puppeteer", "npm:13.7.0"],\
             ["unzipper", "npm:0.10.11"]\

@@ -45,7 +45,7 @@
     "lodash": "^4.17.21",
     "pretty-ms": "^8.0.0",
     "qrcode-terminal": "^0.12.0",
-    "shoukaku": "https://github.com/Deivu/Shoukaku.git#master",
+    "shoukaku": "^3.3.1",
     "whatsapp-web.js": "^1.19.2"
   },
   "devDependencies": {
