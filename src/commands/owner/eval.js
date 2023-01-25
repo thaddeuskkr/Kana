@@ -41,6 +41,7 @@ export class EvalCommand extends Command {
     async chatInputRun(interaction) {
         const code = interaction.options.getString('code');
         /* eslint-disable no-unused-vars */
+        const dispatcher = this.container.queue.get(interaction.guildId);
         const client = this.container.client;
         const whatsappClient = this.container.whatsapp;
         const lastResult = this.lastResult;
