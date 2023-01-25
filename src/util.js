@@ -158,7 +158,7 @@ export class Dispatcher {
     }
 
     static humanizeTime(ms) {
-        return prettyms(ms, { colonNotation: true, secondsDecimalDigits: 0, millisecondsDecimalDigits: 0 });
+        return prettyms(ms, { colonNotation: true, secondsDecimalDigits: 0 });
     }
 
     get exists() {
