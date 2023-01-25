@@ -31,6 +31,7 @@ export class SeekCommand extends Command {
         const ms = SeekCommand.convertToMs(position);
         if (!ms) return await interaction.reply({ embeds: [this.container.util.embed('error', 'Invalid position.')] });
         const dispatcher = this.container.queue.get(interaction.guildId);
+        if (ms < 0 || ms > dispatcher.current.info.length) return await interaction.reply({ embeds: [this.container.util.embed('error', `Position must be equal to or after **0:00** and before **${prettyms(dispatcher.current.info.length, { colonNotation: true, secondsDecimalDigits: 0 })}**.`)] });
         await interaction.reply({ embeds: [this.container.util.embed('success', `Seeked to **\`${prettyms(ms, { colonNotation: true, secondsDecimalDigits: 0 })}\`**.`)] });
         dispatcher.player.seekTo(ms);
     }
@@ -43,6 +44,7 @@ export class SeekCommand extends Command {
         const position = args[0];
         const ms = SeekCommand.convertToMs(position);
         if (!ms) return await msg.reply('Invalid position.');
+        if (ms < 0 || ms > dispatcher.current.info.length) return await msg.reply(`Position must be equal to or after *0:00* and before *${prettyms(dispatcher.current.info.length, { colonNotation: true, secondsDecimalDigits: 0 })}*.`);
         await msg.reply(`Seeked to \`\`\`${prettyms(ms, { colonNotation: true, secondsDecimalDigits: 0 })}\`\`\`.`);
         dispatcher.player.seekTo(ms);
     }
