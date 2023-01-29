@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        uses: actions/checkout@v3
+      -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       -
@@ -29,7 +31,7 @@ jobs:
         name: JSON to environment variables
         uses: rgarcia-phi/json-to-variables@v1.1.0
         with:
-          filename: 'package.json'
+          filename: './package.json'
           prefix: package
           masked: true
       -
