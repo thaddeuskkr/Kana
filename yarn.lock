@@ -1842,10 +1842,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.29":
-  version: 0.37.29
-  resolution: "discord-api-types@npm:0.37.29"
-  checksum: f523f40e95f19dd9de164d9ae2b5714aefb2dd0caf1e22d0ae939e346fe93041a3f2de85756cde6e3060a55b472a1eca0cb7d256335cd16cafa16da90b807b64
+"discord-api-types@npm:^0.37.30":
+  version: 0.37.30
+  resolution: "discord-api-types@npm:0.37.30"
+  checksum: 0e257dd0df6a56d44e8f7b71cfae99b5b5d6c9841a08b477eb6bd69f6dd3bbdb3cefb2b82c899d726db2b2f11b90e2ea99ec94441cb074d07651a8e169be3244
   languageName: node
   linkType: hard
 
@@ -1975,9 +1975,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.32.0":
-  version: 8.32.0
-  resolution: "eslint@npm:8.32.0"
+"eslint@npm:^8.33.0":
+  version: 8.33.0
+  resolution: "eslint@npm:8.33.0"
   dependencies:
     "@eslint/eslintrc": ^1.4.1
     "@humanwhocodes/config-array": ^0.11.8
@@ -2020,7 +2020,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: 23c8fb3c57291eecd9c1448faf603226a8f885022a2cd96e303459bf72e39b7f54987c6fb948f0f9eecaf7085600e6eb0663482a35ea83da12e9f9141a22b91e
+  checksum: 727e63ab8b7acf281442323c5971f6afdd5b656fbcebc4476cf54e35af51b2f180617433fc5e1952f0449ca3f43a905527f9407ea4b8a7ea7562fc9c3f278d4c
   languageName: node
   linkType: hard
 
@@ -2656,16 +2656,16 @@ __metadata:
     "@sapphire/ratelimits": ^2.4.5
     "@sapphire/stopwatch": ^1.5.0
     common-tags: ^1.8.2
-    discord-api-types: ^0.37.29
+    discord-api-types: ^0.37.30
     discord.js: ^14.7.1
     dotenv: ^16.0.3
-    eslint: ^8.32.0
+    eslint: ^8.33.0
     keyv: ^4.5.2
     lodash: ^4.17.21
     pretty-ms: ^8.0.0
     qrcode-terminal: ^0.12.0
     shoukaku: ^3.3.1
-    whatsapp-web.js: ^1.19.2
+    whatsapp-web.js: ^1.19.3
   languageName: unknown
   linkType: soft
 
@@ -3919,9 +3919,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatsapp-web.js@npm:^1.19.2":
-  version: 1.19.2
-  resolution: "whatsapp-web.js@npm:1.19.2"
+"whatsapp-web.js@npm:^1.19.3":
+  version: 1.19.3
+  resolution: "whatsapp-web.js@npm:1.19.3"
   dependencies:
     "@pedroslopez/moduleraid": ^5.0.2
     archiver: ^5.3.1
@@ -3940,7 +3940,7 @@ __metadata:
       optional: true
     unzipper:
       optional: true
-  checksum: cd886a9f718fa2f7112736a1c162b4087c4f95a3473e168c1c247bee546d435b5eeb6ed9c55f27330ac6714c4462348ad02235d73f31c4f21f261d3fa496b9fb
+  checksum: 72af7fab1915f89112a12178e1ab2ff1fcfada53c7302655d57465c547a5467d6dc22f01117ca56eeb2d3f52c48af214f14d60d045abf726916e90a44db9edbc
   languageName: node
   linkType: hard
 
