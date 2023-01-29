@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - 
-        name: JSON to environment variables
+        name: Read version from package.json
         uses: rgarcia-phi/json-to-variables@v1.1.0
         with:
           filename: './package.json'
