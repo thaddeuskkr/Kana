@@ -12,6 +12,7 @@ export class EvalCommand extends Command {
             ...options,
             name: 'eval',
             description: 'Evaluates JavaScript code and returns the result.',
+            aliases: ['ev'],
             preconditions: ['owner']
         });
         this.lastResult = null;

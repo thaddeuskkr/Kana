@@ -9,6 +9,7 @@ export class QueueCommand extends Command {
             ...options,
             name: 'queue',
             description: 'Shows you the current queue for the server.',
+            aliases: ['q'],
             preconditions: ['dispatcher']
         });
     }

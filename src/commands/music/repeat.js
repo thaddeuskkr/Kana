@@ -6,6 +6,7 @@ export class RepeatCommand extends Command {
             ...options,
             name: 'repeat',
             description: 'Turns on or off repeat for the current track or the entire queue.',
+            aliases: ['loop'],
             preconditions: ['voice', 'sameVoice', 'dispatcher']
         });
     }

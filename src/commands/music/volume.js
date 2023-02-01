@@ -6,6 +6,7 @@ export class VolumeCommand extends Command {
             ...options,
             name: 'volume',
             description: 'Changes the volume of the player.',
+            aliases: ['vol'],
             preconditions: ['voice', 'sameVoice', 'dispatcher']
         });
     }

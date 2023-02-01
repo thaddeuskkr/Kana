@@ -6,6 +6,7 @@ export class RewindCommand extends Command {
             ...options,
             name: 'rewind',
             description: 'Restarts the current track. (sets position to 0:00)',
+            aliases: ['rw'],
             preconditions: ['voice', 'sameVoice', 'dispatcher']
         });
     }

@@ -6,6 +6,7 @@ export class SkipCommand extends Command {
             ...options,
             name: 'skip',
             description: 'Skips the currently playing track.',
+            aliases: ['s', 'sk'],
             preconditions: ['voice', 'sameVoice', 'dispatcher']
         });
     }

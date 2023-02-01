@@ -8,6 +8,7 @@ export class LyricsCommand extends Command {
             ...options,
             name: 'lyrics',
             description: 'Shows lyrics for the currently playing track or a specified one.',
+            aliases: ['ly'],
             preconditions: []
         });
     }

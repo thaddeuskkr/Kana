@@ -6,6 +6,7 @@ export class RemoveCommand extends Command {
             ...options,
             name: 'remove',
             description: 'Removes a certain track from the queue.',
+            aliases: ['rm'],
             preconditions: ['voice', 'sameVoice', 'dispatcher', 'queue']
         });
     }

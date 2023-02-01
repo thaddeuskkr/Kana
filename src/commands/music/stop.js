@@ -6,6 +6,7 @@ export class StopCommand extends Command {
             ...options,
             name: 'stop',
             description: 'Stops the music in your server.',
+            aliases: ['st'],
             preconditions: ['voice', 'sameVoice', 'dispatcher']
         });
     }
