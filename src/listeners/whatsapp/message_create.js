@@ -30,7 +30,7 @@ export class MessageCreateListener extends Listener {
         if (!prefix) return;
         let args = msg.body.slice(prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
-        const command = container.stores.get('commands').get(commandName);
+        const command = container.stores.get('commands').get(commandName) || container.stores.get('commands').find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
         if (!command) {
             await msg.react('❌');
             return msg.reply(`Command \`\`\`${commandName}\`\`\` not found.`);
