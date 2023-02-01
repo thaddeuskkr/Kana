@@ -1842,10 +1842,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.30":
-  version: 0.37.30
-  resolution: "discord-api-types@npm:0.37.30"
-  checksum: 0e257dd0df6a56d44e8f7b71cfae99b5b5d6c9841a08b477eb6bd69f6dd3bbdb3cefb2b82c899d726db2b2f11b90e2ea99ec94441cb074d07651a8e169be3244
+"discord-api-types@npm:^0.37.31":
+  version: 0.37.31
+  resolution: "discord-api-types@npm:0.37.31"
+  checksum: 8886a4c320b2abd1fd32cb573d688a9b677b6d82107efe9ea70c6d571dc5eb04d27741320d5e2ae46b316282248176a82c2212de2d11fc32d1f5a869b6519f03
   languageName: node
   linkType: hard
 
@@ -2656,7 +2656,7 @@ __metadata:
     "@sapphire/ratelimits": ^2.4.5
     "@sapphire/stopwatch": ^1.5.0
     common-tags: ^1.8.2
-    discord-api-types: ^0.37.30
+    discord-api-types: ^0.37.31
     discord.js: ^14.7.1
     dotenv: ^16.0.3
     eslint: ^8.33.0
