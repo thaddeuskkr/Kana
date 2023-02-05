@@ -43,7 +43,7 @@ export class HelpCommand extends Command {
                 *Music:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('music') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
                 *Info:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('info') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
                 *Bot:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('bot') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
-                \n\nFor more information on a command, type \`\`\`/help <command>\`\`\`.`
+                \nFor more information on a command, type \`\`\`/help <command>\`\`\`.`
             );
         }
     }
