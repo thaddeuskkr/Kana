@@ -1,5 +1,6 @@
 import { Command } from '@sapphire/framework';
 import { ApplicationCommandType } from 'discord-api-types/v10';
+import tags from 'common-tags';
 
 export class PlayCommand extends Command {
     constructor(context, options) {
@@ -7,6 +8,15 @@ export class PlayCommand extends Command {
             ...options,
             name: 'play',
             description: 'Plays music from one of multiple supported sources.',
+            whatsappDescription: tags.stripIndents`Plays music from one of multiple supported sources.
+                    Supported sources: YouTube Music, YouTube, SoundCloud (Defaults to YouTube Music)
+                    Supports URLs from many sources as well.
+                    Specify search sources using arguments or query prefixes:
+                    --youtube, -yt, yt:<query>: Search via YouTube
+                    --youtubemusic, -ytm, ytm:<query>: Search via YouTube Music
+                    --soundcloud, -sc, sc:<query>: Search via SoundCloud
+                    Additional arguments:
+                    --playnext, -next, -n: Add the track to the top of the queue. If not specified, adds to the end.`,
             aliases: ['p', 'pl'],
             preconditions: ['voice', 'sameVoice']
         });
@@ -151,8 +161,8 @@ export class PlayCommand extends Command {
         if (voice === false) return await msg.reply('You are not in a voice channel.');
         if (sameVoice === false) return await msg.reply('You are not in the same voice channel as the bot.');
         let query = args.join(' ');
-        const next = (query.includes('--playnext') || args.includes('-next')) || false;
-        if (next === true) query.replace('--playnext', '').replace('-next', '');
+        const next = (query.includes('--playnext') || args.includes('-next') || args.includes('-n')) || false;
+        if (next === true) query.replace('--playnext', '').replace('-next', '').replace('-n', '');
         let qSource;
         if (query.includes('yt:') || query.includes('--youtube') || query.includes('-yt')) {
             query = query.replace('yt:', '').replace('--youtube', '').replace('-yt', '');
