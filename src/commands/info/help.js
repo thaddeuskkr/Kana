@@ -24,15 +24,26 @@ export class HelpCommand extends Command {
         const command = args.join(' ').toLowerCase().trim();
         const commands = this.container.stores.get('commands');
         if (command) {
-            // specific command search
+            const cmd = commands.get(command) || commands.find((c) => c.aliases.includes(command));
+            if (cmd) {
+                await msg.reply(
+                    tags.stripIndents`*Command: ${cmd.name}*
+                    *Description:* ${cmd.whatsappDescription || cmd.description}
+                    *Aliases:* ${cmd.aliases.join(', ')}
+                    *Category:* ${cmd.fullCategory.join(' > ')}
+                    `
+                );
+            } else {
+                await msg.reply('Command not found.');
+            }
         } else {
             await msg.reply(
                 tags.stripIndents`*Kana's commands:*
-                *Owner:* \`\`\`${commands.filter((command) => command.fullCategory.includes('owner') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
-                *Music:* \`\`\`${commands.filter((command) => command.fullCategory.includes('music') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
-                *Info:* \`\`\`${commands.filter((command) => command.fullCategory.includes('info') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
-                *Bot:* \`\`\`${commands.filter((command) => command.fullCategory.includes('bot') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
-                `
+                *Owner:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('owner') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
+                *Music:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('music') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
+                *Info:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('info') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
+                *Bot:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('bot') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
+                \n\nFor more information on a command, type \`\`\`/help <command>\`\`\`.`
             );
         }
     }
