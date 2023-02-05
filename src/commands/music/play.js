@@ -8,7 +8,13 @@ export class PlayCommand extends Command {
             ...options,
             name: 'play',
             description: 'Plays music from one of multiple supported sources.',
-            whatsappDescription: tags.stripIndents`Plays music from one of multiple supported sources.
+            aliases: ['p', 'pl'],
+            preconditions: ['voice', 'sameVoice']
+        });
+    }
+
+    get whatsappDescription() { 
+        return tags.stripIndents`Plays music from one of multiple supported sources.
                     Supported sources: YouTube Music, YouTube, SoundCloud (Defaults to YouTube Music)
                     Supports URLs from many sources as well.
                     Specify search sources using arguments or query prefixes:
@@ -16,10 +22,7 @@ export class PlayCommand extends Command {
                     --youtubemusic, -ytm, ytm:<query>: Search via YouTube Music
                     --soundcloud, -sc, sc:<query>: Search via SoundCloud
                     Additional arguments:
-                    --playnext, -next, -n: Add the track to the top of the queue. If not specified, adds to the end.`,
-            aliases: ['p', 'pl'],
-            preconditions: ['voice', 'sameVoice']
-        });
+                    --playnext, -next, -n: Add the track to the top of the queue. If not specified, adds to the end.`;
     }
 
     registerApplicationCommands(registry) {
