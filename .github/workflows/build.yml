@@ -39,5 +39,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: thadkkr/kana:latest, thadkkr/kana:${{ steps.create-tag.outputs.tagname }}
+          tags: thadkkr/kana:${{ steps.create-tag.outputs.tagname }}, thadkkr/kana:latest
           platforms: linux/amd64,linux/arm64
