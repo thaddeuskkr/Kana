@@ -154,14 +154,14 @@ export class PlayCommand extends Command {
         const next = (query.includes('--playnext') || args.includes('-next')) || false;
         if (next === true) query.replace('--playnext', '').replace('-next', '');
         let qSource;
-        if (query.includes('yt:')) {
-            query = query.replace('yt:', '');
+        if (query.includes('yt:') || query.includes('--youtube') || query.includes('-yt')) {
+            query = query.replace('yt:', '').replace('--youtube', '').replace('-yt', '');
             qSource = 'ytsearch';
-        } else if (query.includes('ytm:')) {
-            query = query.replace('ytm:', '');
+        } else if (query.includes('ytm:') || query.includes('--youtubemusic') || query.includes('-ytm')) {
+            query = query.replace('ytm:', '').replace('--youtubemusic', '').replace('-ytm', '');
             qSource = 'ytmsearch';
-        } else if (query.includes('sc:')) {
-            query = query.replace('sc:', '');
+        } else if (query.includes('sc:') || query.includes('--soundcloud') || query.includes('-sc')) {
+            query = query.replace('sc:', '').replace('--soundcloud', '').replace('-sc', '');
             qSource = 'scsearch';
         } else qSource = 'ytmsearch';
         if (!query) return msg.reply('Please provide a query.');
