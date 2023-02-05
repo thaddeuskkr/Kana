@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  kana:
+    container_name: kana
+    build: .
+    image: thadkkr/kana:latest
+    restart: on-failure
+    environment:
+      - NODE_ENV="development"
+    env_file: 
+      - .env
+    volumes:
+      # Configuration
+      - ./src/config.js:/kana/src/config.js
+      # Whatsapp authentication
+      - ./.wwebjs_auth:/kana/.wwebjs_auth
+      # Allow hot reload of Sapphire pieces
+      - ./src/commands:/kana/src/commands
+      - ./src/listeners:/kana/src/listeners
+      - ./src/preconditions:/kana/src/preconditions
