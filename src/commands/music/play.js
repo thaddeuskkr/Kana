@@ -177,6 +177,7 @@ export class PlayCommand extends Command {
             query = query.replace('sc:', '').replace('--soundcloud', '').replace('-sc', '');
             qSource = 'scsearch';
         } else qSource = 'ytmsearch';
+        query = query.trim();
         if (!query) return msg.reply('Please provide a query.');
         const node = this.container.shoukaku.getNode();
         if (!voiceChannels.length) return msg.reply('You are not in a voice channel.');
