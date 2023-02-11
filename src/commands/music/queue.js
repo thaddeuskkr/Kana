@@ -36,7 +36,7 @@ export class QueueCommand extends Command {
             pm.addPageEmbed((embed) => {
                 embed
                     .setAuthor({ name: `${interaction.guild.name} - Queue`, iconURL: interaction.guild.iconURL({ size: 4096 }) })
-                    .setDescription(`**Now playing:**\n[${current.info.title} - ${current.info.author}](${current.info.uri}) (${current.info.requester.toString()})\n\`${this.humanizeTime(dispatcher.player.position)} ${this.container.util.createProgressBar(dispatcher.player.position, current.info.length, 20)} ${this.humanizeTime(current.info.length)}\`\n\n***No tracks in queue.***`)
+                    .setDescription(`**Now playing:**\n[${current.info.title} - ${current.info.author}](${current.info.uri}) (${current.info.requester.toString()})${current.info.isStream ? ' `LIVE`' : `\n\`${this.humanizeTime(dispatcher.player.position)} ${this.container.util.createProgressBar(dispatcher.player.position, current.info.length, 20)} ${this.humanizeTime(current.info.length)}\``}\n\n***No tracks in queue.***`)
                     .setColor('#cba6f7')
                     .setFooter({ text: `${this.container.config.footer.text}${looptxt}`, iconURL: this.container.config.footer.iconURL });
                 return embed;
@@ -46,16 +46,17 @@ export class QueueCommand extends Command {
         for (const track of queue) {
             queueDuration += track.info.length;
         }
+        if (queue.find((track) => track.info.isStream)) queueDuration = '∞';
         for (let x = 0; x < chunked.length; x++) {
             let descriptionLines = [];
             for (let i = 0; i < chunked[x].length; i++) {
                 const track = chunked[x][i];
-                descriptionLines.push(`**${(i + 1) + (x * (this.container.config.tracksPerPage || 15))}:** [${track.info.title} - ${track.info.author}](${track.info.uri}) \`${this.humanizeTime(track.info.length)}\` (${track.info.requester.toString()})`);
+                descriptionLines.push(`**${(i + 1) + (x * (this.container.config.tracksPerPage || 15))}:** [${track.info.title} - ${track.info.author}](${track.info.uri}) \`${track.info.isStream ? '∞' : this.humanizeTime(track.info.length)}\` (${track.info.requester.toString()})`);
             }
             pm.addPageEmbed((embed) => {
                 embed
                     .setAuthor({ name: `${interaction.guild.name} - Queue`, iconURL: interaction.guild.iconURL({ size: 4096 }) })
-                    .setDescription(`[${current.info.title} - ${current.info.author}](${current.info.uri}) (${current.info.requester.toString()})\n\`${this.humanizeTime(dispatcher.player.position)} ${this.container.util.createProgressBar(dispatcher.player.position, current.info.length, 20)} ${this.humanizeTime(current.info.length)}\`\n\n` + descriptionLines.join('\n'))
+                    .setDescription(`[${current.info.title} - ${current.info.author}](${current.info.uri}) (${current.info.requester.toString()})${current.info.isStream ? ' `LIVE`' : `\n\`${this.humanizeTime(dispatcher.player.position)} ${this.container.util.createProgressBar(dispatcher.player.position, current.info.length, 20)} ${this.humanizeTime(current.info.length)}\``}\n\n` + descriptionLines.join('\n'))
                     .setColor('#cba6f7')
                     .setFooter({ text: queue.length > 500 ? `Showing up to 500 of ${queue.length} total tracks in queue (Total duration: ${this.humanizeTime(queueDuration)})${looptxt}` : `${queue.length} tracks in queue (Total duration: ${this.humanizeTime(queueDuration)})${looptxt}`, iconURL: this.container.config.footer.iconURL });
                 return embed;
