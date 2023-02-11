@@ -49,7 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.3.1"],\
-            ["whatsapp-web.js", "npm:1.19.3"]\
+            ["whatsapp-web.js", "https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -3065,7 +3065,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.3.1"],\
-            ["whatsapp-web.js", "npm:1.19.3"]\
+            ["whatsapp-web.js", "https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4495,10 +4495,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["whatsapp-web.js", [\
-        ["npm:1.19.3", {\
-          "packageLocation": "./.yarn/cache/whatsapp-web.js-npm-1.19.3-577ae226af-72af7fab19.zip/node_modules/whatsapp-web.js/",\
+        ["https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1", {\
+          "packageLocation": "./.yarn/cache/whatsapp-web.js-https-632d57814b-cbd67d7376.zip/node_modules/whatsapp-web.js/",\
           "packageDependencies": [\
-            ["whatsapp-web.js", "npm:1.19.3"],\
+            ["whatsapp-web.js", "https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"],\
             ["@pedroslopez/moduleraid", "npm:5.0.2"],\
             ["archiver", "npm:5.3.1"],\
             ["fluent-ffmpeg", "npm:2.1.2"],\
