@@ -58,7 +58,7 @@ const client = new SapphireClient({
         Partials.Message,
     ],
     logger: {
-        level: process.env.NODE_ENV === 'development' ? LogLevel.Debug : LogLevel.Info
+        level: String(process.env.NODE_ENV).toLowerCase() === 'development' ? LogLevel.Debug : LogLevel.Info
     },
     presence: { activities: [config.activities[0]], status: config.activities[0].status }
 });
