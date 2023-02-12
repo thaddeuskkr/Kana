@@ -1,6 +1,6 @@
 {
   "name": "kana",
-  "version": "3.10.1",
+  "version": "3.10.2",
   "description": "A free Discord bot with WhatsApp integrations, made using Node.js and Discord.js, powered by Lavalink and the Sapphire Framework.",
   "main": "src/index.js",
   "type": "module",
