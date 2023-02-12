@@ -9,6 +9,6 @@ export class GuildDeleteListener extends Listener {
     }
     async run (guild) {
         this.container.logger.info(`Guild removed: ${guild.name} (${guild.id})`);
-        this.container.webhook.send({ embeds: [this.container.util.embed(`Removed from server: **${guild.name}** \`${guild.id}\``)] });
+        this.container.webhook.send({ embeds: [this.container.util.embed('info', `Removed from server: **${guild.name}** \`${guild.id}\``)] });
     }
 }
