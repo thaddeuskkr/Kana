@@ -74,7 +74,7 @@ container.whatsapp = whatsapp;
 container.config = config;
 container.util = Util;
 container.queue = new Queue(client);
-container.webhook = new WebhookClient(config.webhook);
+container.webhook = new WebhookClient({ url: config.webhook });
 container.db = new Keyv(config.databaseUrl, { collection: 'kanadb1' });
 container.shoukaku = new Shoukaku(new Connectors.DiscordJS(client), config.lavalink, {
     userAgent: `Kana-${version}`,
