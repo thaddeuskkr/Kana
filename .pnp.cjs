@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/ratelimits", "npm:2.4.5"],\
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["common-tags", "npm:1.8.2"],\
-            ["discord-api-types", "npm:0.37.32"],\
+            ["discord-api-types", "npm:0.37.33"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.34.0"],\
@@ -49,7 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.3.1"],\
-            ["whatsapp-web.js", "https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"]\
+            ["whatsapp-web.js", "npm:1.19.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -2126,10 +2126,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:0.37.32", {\
-          "packageLocation": "./.yarn/cache/discord-api-types-npm-0.37.32-9ece6a61c8-0d45e5741a.zip/node_modules/discord-api-types/",\
+        ["npm:0.37.33", {\
+          "packageLocation": "./.yarn/cache/discord-api-types-npm-0.37.33-e0e4b8fd66-d1e3110608.zip/node_modules/discord-api-types/",\
           "packageDependencies": [\
-            ["discord-api-types", "npm:0.37.32"]\
+            ["discord-api-types", "npm:0.37.33"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3056,7 +3056,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/ratelimits", "npm:2.4.5"],\
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["common-tags", "npm:1.8.2"],\
-            ["discord-api-types", "npm:0.37.32"],\
+            ["discord-api-types", "npm:0.37.33"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.34.0"],\
@@ -3065,7 +3065,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-ms", "npm:8.0.0"],\
             ["qrcode-terminal", "npm:0.12.0"],\
             ["shoukaku", "npm:3.3.1"],\
-            ["whatsapp-web.js", "https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"]\
+            ["whatsapp-web.js", "npm:1.19.4"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4495,10 +4495,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["whatsapp-web.js", [\
-        ["https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1", {\
-          "packageLocation": "./.yarn/cache/whatsapp-web.js-https-632d57814b-cbd67d7376.zip/node_modules/whatsapp-web.js/",\
+        ["npm:1.19.4", {\
+          "packageLocation": "./.yarn/cache/whatsapp-web.js-npm-1.19.4-58cd83a84b-17f0d80558.zip/node_modules/whatsapp-web.js/",\
           "packageDependencies": [\
-            ["whatsapp-web.js", "https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"],\
+            ["whatsapp-web.js", "npm:1.19.4"],\
             ["@pedroslopez/moduleraid", "npm:5.0.2"],\
             ["archiver", "npm:5.3.1"],\
             ["fluent-ffmpeg", "npm:2.1.2"],\

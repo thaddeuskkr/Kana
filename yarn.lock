@@ -1842,10 +1842,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.32":
-  version: 0.37.32
-  resolution: "discord-api-types@npm:0.37.32"
-  checksum: 0d45e5741af8d01f48d81fa417f6cb69bd8647c0c8c0d2bd8f5500e6f1dbe8d8cc62b224522de1cb996125d79de198ad34bb51181daf63e48f659b46eadc2e0a
+"discord-api-types@npm:^0.37.33":
+  version: 0.37.33
+  resolution: "discord-api-types@npm:0.37.33"
+  checksum: d1e31106081ef79d3ea721b8991c5de155879e6d01c47a025b2c41e0496b551608e72e383caf23680938219099b6c3bd43cbacf48edeb7fc9a3c1730c1811ba8
   languageName: node
   linkType: hard
 
@@ -2656,7 +2656,7 @@ __metadata:
     "@sapphire/ratelimits": ^2.4.5
     "@sapphire/stopwatch": ^1.5.0
     common-tags: ^1.8.2
-    discord-api-types: ^0.37.32
+    discord-api-types: ^0.37.33
     discord.js: ^14.7.1
     dotenv: ^16.0.3
     eslint: ^8.34.0
@@ -2665,7 +2665,7 @@ __metadata:
     pretty-ms: ^8.0.0
     qrcode-terminal: ^0.12.0
     shoukaku: ^3.3.1
-    whatsapp-web.js: "https://github.com/tofers/whatsapp-web.js#fix-queryWidExists"
+    whatsapp-web.js: ^1.19.4
   languageName: unknown
   linkType: soft
 
@@ -3919,9 +3919,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"whatsapp-web.js@https://github.com/tofers/whatsapp-web.js#fix-queryWidExists":
-  version: 1.19.3
-  resolution: "whatsapp-web.js@https://github.com/tofers/whatsapp-web.js.git#commit=d4c04f705277dd98979609868a7605ac46c2f8c1"
+"whatsapp-web.js@npm:^1.19.4":
+  version: 1.19.4
+  resolution: "whatsapp-web.js@npm:1.19.4"
   dependencies:
     "@pedroslopez/moduleraid": ^5.0.2
     archiver: ^5.3.1
@@ -3940,7 +3940,7 @@ __metadata:
       optional: true
     unzipper:
       optional: true
-  checksum: cbd67d73763c3425c8e394c50f0f277bce6951fe0d4537050d95d9696a2fc39b63260919f684b4330f3b3e2a2937b525a09e908c30d1e8996863acf68d5c800c
+  checksum: 17f0d80558e044bfb4d1987a56f47fdd22c05b980ef0dbb77b6a9fa8963359fcabc25eaf1f759573109a692d0783f74e65486e6ec4ecee0fa49012105ee35c6d
   languageName: node
   linkType: hard
 
