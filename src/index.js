@@ -17,7 +17,7 @@
 */
 
 import { SapphireClient, LogLevel, container } from '@sapphire/framework';
-import { GatewayIntentBits, Partials } from 'discord.js';
+import { GatewayIntentBits, Partials, WebhookClient } from 'discord.js';
 import { Shoukaku, Connectors } from 'shoukaku';
 import { createRequire } from 'module';
 import Keyv from 'keyv';
@@ -74,6 +74,7 @@ container.whatsapp = whatsapp;
 container.config = config;
 container.util = Util;
 container.queue = new Queue(client);
+container.webhook = new WebhookClient(config.webhook);
 container.db = new Keyv(config.databaseUrl, { collection: 'kanadb1' });
 container.shoukaku = new Shoukaku(new Connectors.DiscordJS(client), config.lavalink, {
     userAgent: `Kana-${version}`,
