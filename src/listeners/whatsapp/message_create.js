@@ -29,6 +29,9 @@ export class MessageCreateListener extends Listener {
         }
         if (!prefix) return;
         let args = msg.body.slice(prefix.length).trim().split(/ +/);
+        let maintenance = await this.container.db.get('maintenance');
+        if (!maintenance) maintenance = false;
+        if (maintenance == true && !this.container.config.ownerIds.includes(msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', ''))) return msg.reply('Kana is currently in maintenance mode. Please try again later.');
         const commandName = args.shift().toLowerCase();
         const command = container.stores.get('commands').get(commandName) || container.stores.get('commands').find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
         if (!command) {
@@ -62,6 +65,8 @@ export class MessageCreateListener extends Listener {
             defaultVc = voiceChannels[0];
             dispatcher = voiceChannels[0] ? this.container.queue.get(defaultVc?.guild?.id) : null;
         }
+
+
 
         try {
             command.whatsappRun({ args, msg, prefix, commandName, user, discordUser, voiceChannels, voice, sameVoice, defaultVc, dispatcher, author: msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '') });
