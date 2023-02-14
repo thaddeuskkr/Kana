@@ -129,13 +129,13 @@ export class Dispatcher {
                     const msgs = await this.channel.messages.fetch({ limit: 1, force: true });
                     if (msgs.first().id === this.nowPlayingMessage.id) {
                         await this.nowPlayingMessage
-                            .edit({ embeds: [ Util.embed('info', `${container.config.emojis.playing} [**${this.current.info.title}** - **${this.current.info.author}**](${this.current.info.uri}) \`${Dispatcher.humanizeTime(this.current.info.length)}\` (${this.current.info.requester.toString()})`) ] })
+                            .edit({ embeds: [ Util.embed('info', `${container.config.emojis.playing} [**${this.current.info.title}** - **${this.current.info.author}**](${this.current.info.uri}) \`${Dispatcher.humanizeTime(this.current.info.length)}\` (${this.current.info.requester.toString()})`, false) ] })
                             .catch(() => null);
                         return;
                     }
                 }
                 this.nowPlayingMessage = await this.channel
-                    .send({ embeds: [ Util.embed('info', `${container.config.emojis.playing} [**${this.current.info.title}** - **${this.current.info.author}**](${this.current.info.uri}) \`${Dispatcher.humanizeTime(this.current.info.length)}\` (${this.current.info.requester.toString()})`) ] })
+                    .send({ embeds: [ Util.embed('info', `${container.config.emojis.playing} [**${this.current.info.title}** - **${this.current.info.author}**](${this.current.info.uri}) \`${Dispatcher.humanizeTime(this.current.info.length)}\` (${this.current.info.requester.toString()})`, false) ] })
                     .catch(() => null);
             })
             .on('end', async () => {
