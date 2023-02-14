@@ -20,8 +20,8 @@ export class MaintenanceCommand extends Command {
     }
     
     async chatInputRun(interaction) {
-        const maintenance = await this.container.client.db.get('maintenance');
-        await this.container.client.db.set('maintenance', !maintenance);
+        const maintenance = await this.container.db.get('maintenance');
+        await this.container.db.set('maintenance', !maintenance);
         await interaction.reply({ embeds: [this.container.util.embed('success', `${!maintenance ? 'Enabled' : 'Disabled'} maintenance mode.`)] });
     }
 
@@ -30,8 +30,8 @@ export class MaintenanceCommand extends Command {
             await msg.react('❌');
             return msg.reply('You do not have sufficient permissions to use this command.');
         }
-        const maintenance = await this.container.client.db.get('maintenance');
-        await this.container.client.db.set('maintenance', !maintenance);
+        const maintenance = await this.container.db.get('maintenance');
+        await this.container.db.set('maintenance', !maintenance);
         await msg.reply(`*${!maintenance ? 'Enabled' : 'Disabled'} maintenance mode.*`);
     }
 }
