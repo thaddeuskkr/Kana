@@ -29,7 +29,7 @@ export class QueueCommand extends Command {
         const current = dispatcher.current;
         const chunked = _.chunk(queue, this.container.config.tracksPerPage || 15);
         const pm = new PaginatedMessage();
-        let motd = await this.container.db.get('motd');
+        let motd = this.container.motd;
         if (!Object(motd) || !motd.enabled || motd?.text?.length <= 0) motd = { enabled: false };
         let looptxt = '';
         if (dispatcher.repeat === 'all') looptxt = ' • Looping the queue';

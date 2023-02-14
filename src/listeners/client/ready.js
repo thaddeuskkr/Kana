@@ -14,6 +14,10 @@ export class ReadyListener extends Listener {
         let current = 0;
         const maintenance = await client.db.get('maintenance');
         if (maintenance === undefined) await client.db.set('maintenance', false);
+        setInterval(async () => { // Refresh MOTD every 5 seconds
+            const motd = await this.container.db.get('motd') || { enabled: false };
+            this.container.motd = motd;
+        }, 5000);
         setInterval(async () => {
             // const maintenance = await client.db.get('maintenance');
             // if (maintenance == true) return client.user.setPresence({ activities: [{ name: 'maintenance mode', type: 'PLAYING' }], status: 'dnd' });
