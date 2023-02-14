@@ -42,6 +42,7 @@ export class QueueCommand extends Command {
                     .setColor('#cba6f7')
                     .setFooter({ text: `${this.container.config.footer.text}${looptxt}${motd.enabled ? ' • ' + motd.text : ''}`, iconURL: motd.enabled ? motd.icon || this.container.config.footer.iconURL : this.container.config.footer.iconURL });
                 if (motd.enabled && motd.image) embed.setImage(motd.image);
+                if (motd.enabled && motd.thumbnail) embed.setThumbnail(motd.thumbnail);
                 return embed;
             });
         }

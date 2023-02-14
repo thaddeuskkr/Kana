@@ -31,7 +31,7 @@ export class Util {
                 .setColor(color);
             if (motd && Object(container.motd) && container.motd.enabled && container.motd?.text?.length > 0) {
                 built.setFooter({ text: container.motd.text, iconURL: container.motd.icon || undefined });
-                if (container.motd.thumbnail) built.setThumbnail(container.motd.thumbnail || undefined);
+                built.setThumbnail(container.motd.thumbnail || undefined);
             }
             return built;
         } else {
