@@ -4,6 +4,7 @@ import prettyms from 'pretty-ms';
 
 export class Util {
     static async embed(type, text, motdEnabled = true) {
+        const motd = await container.db.get('motd') || { enabled: false };
         let color;
         let emoji = '';
         switch (type) {
@@ -29,7 +30,6 @@ export class Util {
             const built = new EmbedBuilder()
                 .setDescription(emoji + ' ' + text)
                 .setColor(color);
-            const motd = await container.db.get('motd');
             if (motdEnabled && Object(motd) && motd.enabled && motd?.text?.length > 0) {
                 built.setFooter({ text: motd.text, iconURL: motd.icon || undefined });
                 built.setThumbnail(motd.thumbnail || undefined);
