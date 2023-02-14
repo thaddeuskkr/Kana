@@ -3,7 +3,7 @@ import { EmbedBuilder, ChannelType } from 'discord.js';
 import prettyms from 'pretty-ms';
 
 export class Util {
-    static embed(type, text) {
+    static embed(type, text, motd = true) {
         let color;
         let emoji = '';
         switch (type) {
@@ -21,11 +21,19 @@ export class Util {
             break;
         case 'info':
             color = '#cba6f7';
+            break;
+        default:
+            color = '#cba6f7';
         }
-        if (text) {
-            return new EmbedBuilder()
+        if (type && text) {
+            const built = new EmbedBuilder()
                 .setDescription(emoji + ' ' + text)
                 .setColor(color);
+            if (motd && typeof container.motd == Object && container.motd.enabled == true && container.motd?.text?.length > 0) {
+                built.setFooter({ text: container.motd.text, iconURL: container.motd.icon || undefined });
+                if (container.motd.thumbnail) built.setThumbnail(container.motd.thumbnail || undefined);
+            }
+            return built;
         } else {
             return new EmbedBuilder()
                 .setColor(color)
