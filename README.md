@@ -13,8 +13,8 @@
 - [Source Code](https://kana.tkkr.one/github)
 - [Community/Support](https://kana.tkkr.one/discord)
 
-### Self-hosting
-Self hosting Kana is no longer supported.
+### Note
+*Take note that v4 has no **breaking changes** from v3.*
 
 ### License
 ```
