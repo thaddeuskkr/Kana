@@ -29,7 +29,7 @@ export class Util {
             const built = new EmbedBuilder()
                 .setDescription(emoji + ' ' + text)
                 .setColor(color);
-            if (motd && typeof container.motd == Object && container.motd.enabled == true && container.motd?.text?.length > 0) {
+            if (motd && Object(container.motd) && container.motd.enabled && container.motd?.text?.length > 0) {
                 built.setFooter({ text: container.motd.text, iconURL: container.motd.icon || undefined });
                 if (container.motd.thumbnail) built.setThumbnail(container.motd.thumbnail || undefined);
             }
