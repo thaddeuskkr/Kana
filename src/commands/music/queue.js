@@ -29,6 +29,8 @@ export class QueueCommand extends Command {
         const current = dispatcher.current;
         const chunked = _.chunk(queue, this.container.config.tracksPerPage || 15);
         const pm = new PaginatedMessage();
+        let motd = { enabled: false };
+        if (typeof this.container.motd == Object && this.container.motd.enabled == true && this.container.motd?.text?.length > 0) motd = this.container.motd;
         let looptxt = '';
         if (dispatcher.repeat === 'all') looptxt = ' • Looping the queue';
         else if (dispatcher.repeat === 'one') looptxt = ' • Looping the current track';
@@ -38,7 +40,8 @@ export class QueueCommand extends Command {
                     .setAuthor({ name: `${interaction.guild.name} - Queue`, iconURL: interaction.guild.iconURL({ size: 4096 }) })
                     .setDescription(`**Now playing:**\n[${current.info.title} - ${current.info.author}](${current.info.uri}) (${current.info.requester.toString()})${current.info.isStream ? ' `LIVE`' : `\n\`${this.humanizeTime(dispatcher.player.position)} ${this.container.util.createProgressBar(dispatcher.player.position, current.info.length, 20)} ${this.humanizeTime(current.info.length)}\``}\n\n***No tracks in queue.***`)
                     .setColor('#cba6f7')
-                    .setFooter({ text: `${this.container.config.footer.text}${looptxt}`, iconURL: this.container.config.footer.iconURL });
+                    .setFooter({ text: `${this.container.config.footer.text}${looptxt}${motd.enabled ? ' • ' + motd.text : ''}`, iconURL: motd.enabled ? motd.icon || this.container.config.footer.iconURL : this.container.config.footer.iconURL });
+                if (motd.enabled && motd.image) embed.setImage(motd.image);
                 return embed;
             });
         }
@@ -58,7 +61,8 @@ export class QueueCommand extends Command {
                     .setAuthor({ name: `${interaction.guild.name} - Queue`, iconURL: interaction.guild.iconURL({ size: 4096 }) })
                     .setDescription(`[${current.info.title} - ${current.info.author}](${current.info.uri}) (${current.info.requester.toString()})${current.info.isStream ? ' `LIVE`' : `\n\`${this.humanizeTime(dispatcher.player.position)} ${this.container.util.createProgressBar(dispatcher.player.position, current.info.length, 20)} ${this.humanizeTime(current.info.length)}\``}\n\n` + descriptionLines.join('\n'))
                     .setColor('#cba6f7')
-                    .setFooter({ text: queue.length > 500 ? `Showing up to 500 of ${queue.length} total tracks in queue (Total duration: ${this.humanizeTime(queueDuration)})${looptxt}` : `${queue.length} tracks in queue (Total duration: ${this.humanizeTime(queueDuration)})${looptxt}`, iconURL: this.container.config.footer.iconURL });
+                    .setFooter({ text: queue.length > 500 ? `Showing up to 500 of ${queue.length} total tracks in queue (Total duration: ${this.humanizeTime(queueDuration)})${looptxt}${motd.enabled ? ' • ' + motd.text : ''}` : `${queue.length} tracks in queue (Total duration: ${this.humanizeTime(queueDuration)})${looptxt}${motd.enabled ? ' • ' + motd.text : ''}`, iconURL: motd.enabled ? motd.icon || this.container.config.footer.iconURL : this.container.config.footer.iconURL });
+                if (motd.enabled && motd.image) embed.setImage(motd.image);
                 return embed;
             });
         }
