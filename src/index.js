@@ -81,9 +81,6 @@ container.shoukaku = new Shoukaku(new Connectors.DiscordJS(client), config.laval
     reconnectTries: 10
 });
 
-if (container.config.motd) container.motd = container.config.motd;
-else container.motd = { enabled: false };
-
 process.on('unhandledRejection', (error) => {
     container.logger.error(error);
 });
