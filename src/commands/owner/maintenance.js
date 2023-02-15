@@ -22,7 +22,7 @@ export class MaintenanceCommand extends Command {
     async chatInputRun(interaction) {
         const maintenance = await this.container.db.get('maintenance');
         await this.container.db.set('maintenance', !maintenance);
-        await interaction.reply({ embeds: [this.container.util.embed('success', `${!maintenance ? 'Enabled' : 'Disabled'} maintenance mode.`)] });
+        await interaction.reply({ embeds: [this.container.util.embed('success', `${!maintenance ? 'Enabled' : 'Disabled'} maintenance mode.`)], ephemeral: true });
     }
 
     async whatsappRun({ msg, author }) {
