@@ -36,10 +36,7 @@ export class MessageCreateListener extends Listener {
         if (!maintenance) maintenance = false;
         if (maintenance == true && !this.container.config.ownerIds.includes(u)) return msg.reply('Kana is currently in maintenance mode. Please try again later.');
         const userBan = banned.find(o => o.ids.includes(u));
-        let gcBan;
-        if (msg.from.includes('@g.us')) gcBan = banned.find(o => o.ids.includes(msg.from.replace('@g.us', '')));
         if (userBan) return msg.reply(`You are currently *banned* from using Kana's commands. Reason: \`${userBan.reason}\``);
-        if (gcBan) return msg.reply(`This group is currently *banned* from using Kana's commands. Reason: \`${gcBan.reason}\``);
         const commandName = args.shift().toLowerCase();
         const command = container.stores.get('commands').get(commandName) || container.stores.get('commands').find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
         if (!command) {
