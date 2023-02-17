@@ -29,9 +29,17 @@ export class MessageCreateListener extends Listener {
         }
         if (!prefix) return;
         let args = msg.body.slice(prefix.length).trim().split(/ +/);
+        const u = msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '');
         let maintenance = await this.container.db.get('maintenance');
+        let banned = await this.container.db.get('banned');
+        if (!banned) banned = [];
         if (!maintenance) maintenance = false;
-        if (maintenance == true && !this.container.config.ownerIds.includes(msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', ''))) return msg.reply('Kana is currently in maintenance mode. Please try again later.');
+        if (maintenance == true && !this.container.config.ownerIds.includes(u)) return msg.reply('Kana is currently in maintenance mode. Please try again later.');
+        const userBan = banned.find(o => o.ids.includes(u));
+        let gcBan;
+        if (msg.from.includes('@g.us')) gcBan = banned.find(o => o.ids.includes(msg.from.replace('@g.us', '')));
+        if (userBan) return msg.reply(`You are currently *banned* from using Kana's commands. Reason: \`${userBan.reason}\``);
+        if (gcBan) return msg.reply(`This group is currently *banned* from using Kana's commands. Reason: \`${gcBan.reason}\``);
         const commandName = args.shift().toLowerCase();
         const command = container.stores.get('commands').get(commandName) || container.stores.get('commands').find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
         if (!command) {
@@ -65,8 +73,6 @@ export class MessageCreateListener extends Listener {
             defaultVc = voiceChannels[0];
             dispatcher = voiceChannels[0] ? this.container.queue.get(defaultVc?.guild?.id) : null;
         }
-
-
 
         try {
             command.whatsappRun({ args, msg, prefix, commandName, user, discordUser, voiceChannels, voice, sameVoice, defaultVc, dispatcher, author: msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '') });
