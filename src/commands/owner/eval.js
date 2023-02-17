@@ -2,6 +2,7 @@ import { Command, container } from '@sapphire/framework';
 import { ApplicationCommandType } from 'discord-api-types/v10';
 import util from 'util';
 import tags from 'common-tags';
+import Discord from 'discord.js';
 
 const nl = '!!NL!!';
 const nlPattern = new RegExp(nl, 'g');
@@ -47,6 +48,7 @@ export class EvalCommand extends Command {
         const whatsappClient = this.container.whatsapp;
         const lastResult = this.lastResult;
         const container = this.container;
+        const discord = Discord;
         /* eslint-enable no-unused-vars */
         let hrDiff;
         try {
@@ -77,6 +79,7 @@ export class EvalCommand extends Command {
         const whatsappClient = this.container.whatsapp;
         const lastResult = this.lastResult;
         const container = this.container;
+        const discord = Discord;
         /* eslint-enable no-unused-vars */
         let hrDiff;
         try {
