@@ -16,13 +16,13 @@ export class ReadyListener extends Listener {
             this.container.motd = await this.container.db.get('motd') || { enabled: false };
             const maintenance = await this.container.db.get('maintenance') || false;
             if (maintenance == true && this.container.statusRotator) { // Set presence to maintenance if maintenance is enabled
-                client.user.setPresence({ activities: [{ name: 'maintenance mode', type: 'PLAYING' }], status: 'dnd' });
-                clearInterval(this.container.statusRotator);
                 this.container.statusRotator = null;
+                clearInterval(this.container.statusRotator);
+                await client.user.setPresence({ activities: [{ name: 'maintenance mode', type: 'PLAYING' }], status: 'dnd' });
             } else if (this.container.motd.enabled == true && this.container.statusRotator) { // Set presence to MOTD presence if MOTD is enabled
-                client.user.setPresence({ activities: [this.container.motd.presence], status: this.container.motd.presence.status });
-                clearInterval(this.container.statusRotator);
                 this.container.statusRotator = null;
+                clearInterval(this.container.statusRotator);
+                await client.user.setPresence({ activities: [this.container.motd.presence], status: this.container.motd.presence.status });
             } else if (this.container.motd.enabled == false && maintenance == false && this.container.statusRotator == null) { // Set presence to status rotator if MOTD is disabled
                 this.container.statusRotator = setInterval(async () => {
                     const activity = this.container.config.activities[this.container.statusRotatorCurrent];
