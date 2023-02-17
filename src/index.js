@@ -82,9 +82,6 @@ container.shoukaku = new Shoukaku(new Connectors.DiscordJS(client), config.laval
     userAgent: `Kana-${version}`,
     reconnectTries: 10
 });
-container.motdRefresher = setInterval(async () => { // Refresh MOTD every 5 seconds
-    container.motd = await container.db.get('motd') || { enabled: false };
-}, 5000);
 
 process.on('unhandledRejection', (error) => {
     container.logger.error(error);
