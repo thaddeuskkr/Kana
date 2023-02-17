@@ -22,12 +22,12 @@ export class BanPrecondition extends AllFlowsPrecondition {
             await this.container.db.set('banned', []);
             return this.ok();
         }
-        const userBan = banned.find(o => o.id == u);
-        const guildBan = banned.find(o => o.id == g);
-        const channelBan = banned.find(o => o.id == c);
+        const userBan = banned.find(o => o.ids.includes(u));
+        const guildBan = banned.find(o => o.ids.includes(g));
+        const channelBan = banned.find(o => o.ids.includes(c));
         if (userBan) return this.error({ message: `You are currently **banned** from using Kana's commands. Reason: \`${userBan.reason}\`` });
-        if (guildBan) return this.error({ message: `Your server is currently **banned** from using Kana's commands. Reason: \`${userBan.reason}\`` });
-        if (channelBan) return this.error({ message: `This channel is currently **banned** from using Kana's commands. Reason: \`${userBan.reason}\`` });
+        if (guildBan) return this.error({ message: `Your server is currently **banned** from using Kana's commands. Reason: \`${guildBan.reason}\`` });
+        if (channelBan) return this.error({ message: `This channel is currently **banned** from using Kana's commands. Reason: \`${channelBan.reason}\`` });
         return this.ok();
     }
 }
