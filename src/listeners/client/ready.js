@@ -23,17 +23,17 @@ export class ReadyListener extends Listener {
             this.container.motd = motd;
             this.container.maintenance = maintenance;
 
-            if (maintenance && client.user.presence.activities !== [{ name: 'maintenance mode', type: ActivityType.Playing }]) {
+            if (maintenance && client.user.presence.activities[0].name !== 'maintenance mode') {
                 client.user.setPresence({ activities: [{ name: 'maintenance mode', type: ActivityType.Playing }], status: 'dnd' });
                 this.container.logger.debug('Presence updated.');
             }
-            if (motd.enabled && client.user.presence.activities !== [{ name: motd.presence.name, type: motd.presence.type }]) {
+            if (motd.enabled && client.user.presence.activities[0].name !== motd.presence.name) {
                 client.user.setPresence({ activities: [motd.presence], status: motd.presence.status });
                 this.container.logger.debug('Presence updated.');
             }
             if (!maintenance && !motd.enabled && this.container.presenceUpdateRequired) {
                 const activity = this.container.config.activities[this.container.statusRotatorCurrent];
-                if (client.user.presence.activities !== [{ name: activity.name, type: activity.type }]) {
+                if (client.user.presence.activities.name !== activity.name) {
                     client.user.setPresence({ activities: [activity], status: activity.status });
                     this.container.logger.debug('Presence updated.');
                 }
