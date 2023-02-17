@@ -20,6 +20,7 @@ import { SapphireClient, LogLevel, container } from '@sapphire/framework';
 import { GatewayIntentBits, Partials, WebhookClient } from 'discord.js';
 import { Shoukaku, Connectors } from 'shoukaku';
 import { createRequire } from 'module';
+import { AutoPoster } from 'topgg-autoposter';
 import Keyv from 'keyv';
 import wweb from 'whatsapp-web.js';
 const { Client, LocalAuth } = wweb;
@@ -76,6 +77,7 @@ container.util = Util;
 container.queue = new Queue(client);
 container.webhook = new WebhookClient({ url: config.webhook });
 container.db = new Keyv(config.databaseUrl, { collection: 'kanadb1' });
+container.autoposter = AutoPoster(config.topggToken, client, { interval: 900000, postOnStart: true });
 container.shoukaku = new Shoukaku(new Connectors.DiscordJS(client), config.lavalink, {
     userAgent: `Kana-${version}`,
     reconnectTries: 10
