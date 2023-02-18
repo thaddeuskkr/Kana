@@ -11,7 +11,7 @@
 ### Links
 - [Invite](https://kana.tkkr.one/invite)
 - [Source Code](https://kana.tkkr.one/github)
-- [Community/Support](https://kana.tkkr.one/discord)
+- [Community/Support](https://kana.tkkr.one/discord) `Invite revoked. If you need a way to contact me, please send an email to tk@tkkr.one instead.`
 
 ### Note
 *Take note that v4 has no **breaking changes** from v3.*
