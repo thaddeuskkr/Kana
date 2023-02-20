@@ -21,4 +21,11 @@ export class PingCommand extends Command {
         const msg = await interaction.reply({ content: '*Pong!*', fetchReply: true });
         interaction.editReply({ content: `*Pong!*\n**Heartbeat:** \`${Math.round(this.container.client.ws.ping)}ms\`\n**Message round trip time:** \`${Math.round(msg.createdTimestamp - interaction.createdTimestamp)}ms\`` });
     }
+
+    async whatsappRun({ msg }) {
+        /*
+        I'm aware that this command only gets Discord's WebSocket ping. But I'm not too sure on how to get WhatsApp's ping.
+        */
+        msg.reply(`*Pong!* \n*Heartbeat:* ${Math.round(this.container.client.ws.ping)}ms`);
+    }
 }
