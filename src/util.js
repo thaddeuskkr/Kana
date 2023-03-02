@@ -133,6 +133,8 @@ export class Dispatcher {
                             .edit({ embeds: [ Util.embed('info', `${container.config.emojis.playing} [**${this.current.info.title}** - **${this.current.info.author}**](${this.current.info.uri}) \`${Dispatcher.humanizeTime(this.current.info.length)}\` (${this.current.info.requester.toString()})`, false) ] })
                             .catch(() => null);
                         return;
+                    } else {
+                        await this.nowPlayingMessage.delete().catch(() => null);
                     }
                 }
                 this.nowPlayingMessage = await this.channel
