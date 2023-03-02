@@ -1085,7 +1085,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord.js-utilities@npm:6.0.2":
+"@sapphire/discord.js-utilities@npm:6.0.2, @sapphire/discord.js-utilities@npm:^6.0.2":
   version: 6.0.2
   resolution: "@sapphire/discord.js-utilities@npm:6.0.2"
   dependencies:
@@ -1094,18 +1094,6 @@ __metadata:
     "@sapphire/utilities": ^3.11.0
     tslib: ^2.5.0
   checksum: 985b15b9d5f7bb2bed5e919ab7fc8a69dca9ef5baa3a44443b64558dce3303560027b0ed21a72ff849179e9181524316ffdfed6eb267020e3c10378b361c2f07
-  languageName: node
-  linkType: hard
-
-"@sapphire/discord.js-utilities@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "@sapphire/discord.js-utilities@npm:6.0.1"
-  dependencies:
-    "@sapphire/discord-utilities": ^3.0.0
-    "@sapphire/duration": ^1.0.0
-    "@sapphire/utilities": ^3.11.0
-    tslib: ^2.4.1
-  checksum: e5d95c97f10cf2b4ed249d2e553831522618cc18078a1dfbbf4d18d874b5b34a80930e172ab36fdd4b3099788f2a116fe44b2025d16ab14975a3201f6646e22e
   languageName: node
   linkType: hard
 
@@ -2719,7 +2707,7 @@ __metadata:
   dependencies:
     "@jeve/lyrics-finder": ^1.0.1
     "@keyv/mongo": ^2.1.8
-    "@sapphire/discord.js-utilities": ^6.0.1
+    "@sapphire/discord.js-utilities": ^6.0.2
     "@sapphire/framework": ^4.2.0
     "@sapphire/pieces": ^3.6.0
     "@sapphire/plugin-hmr": ^2.0.0
