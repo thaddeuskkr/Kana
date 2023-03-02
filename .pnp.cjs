@@ -44,7 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord-api-types", "npm:0.37.35"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
-            ["eslint", "npm:8.34.0"],\
+            ["eslint", "npm:8.35.0"],\
             ["keyv", "npm:4.5.2"],\
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
@@ -1063,10 +1063,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@eslint/eslintrc", [\
-        ["npm:1.4.1", {\
-          "packageLocation": "./.yarn/cache/@eslint-eslintrc-npm-1.4.1-007f670de2-cd3e5a8683.zip/node_modules/@eslint/eslintrc/",\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/@eslint-eslintrc-npm-2.0.0-0c9322b41f-31119c8ca0.zip/node_modules/@eslint/eslintrc/",\
           "packageDependencies": [\
-            ["@eslint/eslintrc", "npm:1.4.1"],\
+            ["@eslint/eslintrc", "npm:2.0.0"],\
             ["ajv", "npm:6.12.6"],\
             ["debug", "virtual:b86a9fb34323a98c6519528ed55faa0d9b44ca8879307c0b29aa384bde47ff59a7d0c9051b31246f14521dfb71ba3c5d6d0b35c29fffc17bf875aa6ad977d9e8#npm:4.3.4"],\
             ["espree", "npm:9.4.1"],\
@@ -1076,6 +1076,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:4.1.0"],\
             ["minimatch", "npm:3.1.2"],\
             ["strip-json-comments", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@eslint/js", [\
+        ["npm:8.35.0", {\
+          "packageLocation": "./.yarn/cache/@eslint-js-npm-8.35.0-f41d80f951-6687ceff65.zip/node_modules/@eslint/js/",\
+          "packageDependencies": [\
+            ["@eslint/js", "npm:8.35.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2279,11 +2288,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["eslint", [\
-        ["npm:8.34.0", {\
-          "packageLocation": "./.yarn/cache/eslint-npm-8.34.0-7bd74f3480-4e13e9eb05.zip/node_modules/eslint/",\
+        ["npm:8.35.0", {\
+          "packageLocation": "./.yarn/cache/eslint-npm-8.35.0-23207d2624-6212173691.zip/node_modules/eslint/",\
           "packageDependencies": [\
-            ["eslint", "npm:8.34.0"],\
-            ["@eslint/eslintrc", "npm:1.4.1"],\
+            ["eslint", "npm:8.35.0"],\
+            ["@eslint/eslintrc", "npm:2.0.0"],\
+            ["@eslint/js", "npm:8.35.0"],\
             ["@humanwhocodes/config-array", "npm:0.11.8"],\
             ["@humanwhocodes/module-importer", "npm:1.0.1"],\
             ["@nodelib/fs.walk", "npm:1.2.8"],\
@@ -2294,10 +2304,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["doctrine", "npm:3.0.0"],\
             ["escape-string-regexp", "npm:4.0.0"],\
             ["eslint-scope", "npm:7.1.1"],\
-            ["eslint-utils", "virtual:7bd74f3480a072012f2e0b3d179e2bad85e462aeebf15d2c82548531d8bd68a830f72b4f997b29d6469c4829d2eefb8a1424a0b3d1e8856f900abeca7340db20#npm:3.0.0"],\
+            ["eslint-utils", "virtual:23207d2624cff179036955421f217d9b642767180ad318c56c9a42241d1f73297bd7d818c1d044fee5132b3f5ca0006e70621c180081f2f18292dd296bf87024#npm:3.0.0"],\
             ["eslint-visitor-keys", "npm:3.3.0"],\
             ["espree", "npm:9.4.1"],\
-            ["esquery", "npm:1.4.0"],\
+            ["esquery", "npm:1.4.2"],\
             ["esutils", "npm:2.0.3"],\
             ["fast-deep-equal", "npm:3.1.3"],\
             ["file-entry-cache", "npm:6.0.1"],\
@@ -2345,12 +2355,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:7bd74f3480a072012f2e0b3d179e2bad85e462aeebf15d2c82548531d8bd68a830f72b4f997b29d6469c4829d2eefb8a1424a0b3d1e8856f900abeca7340db20#npm:3.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/eslint-utils-virtual-db30c04deb/0/cache/eslint-utils-npm-3.0.0-630b3a4013-0668fe02f5.zip/node_modules/eslint-utils/",\
+        ["virtual:23207d2624cff179036955421f217d9b642767180ad318c56c9a42241d1f73297bd7d818c1d044fee5132b3f5ca0006e70621c180081f2f18292dd296bf87024#npm:3.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/eslint-utils-virtual-9ef3f1e97c/0/cache/eslint-utils-npm-3.0.0-630b3a4013-0668fe02f5.zip/node_modules/eslint-utils/",\
           "packageDependencies": [\
-            ["eslint-utils", "virtual:7bd74f3480a072012f2e0b3d179e2bad85e462aeebf15d2c82548531d8bd68a830f72b4f997b29d6469c4829d2eefb8a1424a0b3d1e8856f900abeca7340db20#npm:3.0.0"],\
+            ["eslint-utils", "virtual:23207d2624cff179036955421f217d9b642767180ad318c56c9a42241d1f73297bd7d818c1d044fee5132b3f5ca0006e70621c180081f2f18292dd296bf87024#npm:3.0.0"],\
             ["@types/eslint", null],\
-            ["eslint", "npm:8.34.0"],\
+            ["eslint", "npm:8.35.0"],\
             ["eslint-visitor-keys", "npm:2.1.0"]\
           ],\
           "packagePeers": [\
@@ -2389,10 +2399,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["esquery", [\
-        ["npm:1.4.0", {\
-          "packageLocation": "./.yarn/cache/esquery-npm-1.4.0-f39408b1a7-a0807e17ab.zip/node_modules/esquery/",\
+        ["npm:1.4.2", {\
+          "packageLocation": "./.yarn/cache/esquery-npm-1.4.2-7f7c29c5bf-2f4ad89c5a.zip/node_modules/esquery/",\
           "packageDependencies": [\
-            ["esquery", "npm:1.4.0"],\
+            ["esquery", "npm:1.4.2"],\
             ["estraverse", "npm:5.3.0"]\
           ],\
           "linkType": "HARD"\
@@ -3120,7 +3130,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord-api-types", "npm:0.37.35"],\
             ["discord.js", "npm:14.7.1"],\
             ["dotenv", "npm:16.0.3"],\
-            ["eslint", "npm:8.34.0"],\
+            ["eslint", "npm:8.35.0"],\
             ["keyv", "npm:4.5.2"],\
             ["lodash", "npm:4.17.21"],\
             ["pretty-ms", "npm:8.0.0"],\
