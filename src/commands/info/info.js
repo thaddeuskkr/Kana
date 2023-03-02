@@ -33,7 +33,7 @@ export class InfoCommand extends Command {
             )
             .setColor('#cba6f7')
             .setURL('https://kana.tkkr.one/github')
-            .addFields(
+            .addFields([
                 {
                     name: 'Free:',
                     value: 'Kana is, and always will be, completely free to use. No vote-locked commands, no paywalls, and no advertisements.'
@@ -58,13 +58,13 @@ export class InfoCommand extends Command {
                     name: 'WhatsApp:',
                     value: 'Kana has (experimental) WhatsApp integrations, meaning that most commands can be executed on WhatsApp as well as Discord with basically no latency. `/link` on Discord to get started!'
                 }
-            );
+            ]);
         const embed2 = new EmbedBuilder()
             .setTitle('Kana\'s Statistics')
             .setColor('#cba6f7')
             .setFooter({ text: 'Kana is made with ♡ by ' + owner.tag, iconURL: owner.displayAvatarURL({ dynamic: true, size: 4096 }) })
             .setImage('https://github.com/thaddeuskkr/Kana/blob/master/assets/kana-banner.png?raw=true')
-            .addFields(
+            .addFields([
                 {
                     name: 'Server count:',
                     value: this.container.client.guilds.cache.size,
@@ -105,7 +105,7 @@ export class InfoCommand extends Command {
                     value: ms(stats.totalUptime * 1000, { verbose: true }),
                     inline: true
                 }
-            );
+            ]);
         return interaction.editReply({ embeds: [embed1, embed2] });
     }
 
