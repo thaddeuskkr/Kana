@@ -3,13 +3,14 @@
 ## Supported Versions
 
 Version 3.3.5 is the first release where Docker support is officially added, therefore this will be the start of version releases.  
-Anything below version 3.3.5 is no longer supported, and Kohana - <= v2 is no longer available for download.  
+Anything below version 3.3.5 is no longer supported, and Kana - <= v2 is no longer available for download.  
 When a new version is released, older versions will receive support, but only for MAJOR security issues / dependency updates. There will not be more code changes. 
 If something breaks with other versions after a new one is released, it will NOT be fixed.  
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 3.3.x   | :white_check_mark: |
+| 4.x.x   | :white_check_mark: |
+| 3.x.x   | :x:                |
 | < 3.0   | :x:                |
 
 ## Reporting a Vulnerability
