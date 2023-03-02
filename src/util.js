@@ -141,7 +141,7 @@ export class Dispatcher {
             })
             .on('end', async () => {
                 container.totalTracksPlayed++;
-                container.tracksPlayed.push({ url: this.current.info.identifier, source: this.current.info.sourceName });
+                container.tracksPlayed.push({ url: this.current.info.identifier, source: this.current.info.sourceName, title: this.current.info.title, author: this.current.info.author });
                 if (this.current.info.isStream == false) container.totalTrackDuration += this.current.info.length;
                 if (this.repeat === 'one') this.queue.unshift(this.current);
                 if (this.repeat === 'all' && !this.current.skipped) this.queue.push(this.current);
