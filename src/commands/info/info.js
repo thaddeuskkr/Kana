@@ -22,9 +22,17 @@ export class InfoCommand extends Command {
     }
     
     async chatInputRun(interaction) {
+        const container = this.container;
         await interaction.reply({ embeds: [this.container.util.embed('loading', 'Retrieving statistics...')] });
         const owner = await this.container.client.users.fetch(this.container.config.ownerIds[0]);
-        const stats = await this.container.db.get('stats');
+        let stats = await this.container.db.get('stats');
+        stats = { 
+            tracksPlayed: [...stats.tracksPlayed, ...container.tracksPlayed], // List of tracks played by the bot ({ identifier, source, title, author })
+            totalTracksPlayed: container.totalTracksPlayed + stats.totalTracksPlayed, // Total number of tracks played by the bot
+            totalDuration: container.totalTrackDuration + stats.totalDuration, // Total duration of all tracks played by the bot (not including streams of course) in milliseconds
+            totalCommandsInvoked: container.totalCommandsInvoked + stats.totalCommandsInvoked, // Total number of commands invoked by users
+            totalUptime: process.uptime() + stats.totalUptime // Total uptime of the bot in seconds
+        };
         const embed1 = new EmbedBuilder()
             .setTitle('About Kana')
             .setDescription(
@@ -67,12 +75,12 @@ export class InfoCommand extends Command {
             .addFields([
                 {
                     name: 'Server count:',
-                    value: this.container.client.guilds.cache.size,
+                    value: String(this.container.client.guilds.cache.size),
                     inline: true
                 },
                 {
                     name: 'User count:',
-                    value: this.container.client.users.cache.size,
+                    value: String(this.container.client.users.cache.size),
                     inline: true
                 },
                 {
@@ -82,12 +90,12 @@ export class InfoCommand extends Command {
                 },
                 {
                     name: 'Active players:',
-                    value: this.container.shoukaku.getNode().stats.players,
+                    value: String(this.container.shoukaku.getNode().stats.players),
                     inline: true
                 },
                 {
                     name: 'Total tracks played:',
-                    value: stats.totalTracksPlayed,
+                    value: String(stats.totalTracksPlayed),
                     inline: true
                 },
                 {
@@ -97,7 +105,7 @@ export class InfoCommand extends Command {
                 },
                 {
                     name: 'Total commands executed:',
-                    value: stats.totalCommandsInvoked,
+                    value: String(stats.totalCommandsInvoked),
                     inline: true
                 },
                 {
