@@ -91,11 +91,6 @@ process.on('unhandledRejection', (error) => {
     container.logger.error(error);
 });
 
-process.on('SIGTERM', cleanup);
-process.on('SIGINT', cleanup);
-process.on('SIGUSR1', cleanup);
-process.on('SIGUSR2', cleanup);
-
 const cleanup = async () => {
     const stats = await container.db.get('stats');
     if (!stats) {
@@ -118,6 +113,11 @@ const cleanup = async () => {
         process.exit();
     }
 };
+
+process.on('SIGTERM', cleanup);
+process.on('SIGINT', cleanup);
+process.on('SIGUSR1', cleanup);
+process.on('SIGUSR2', cleanup);
 
 if (!container.runtimeArguments.includes('--no-discord') && !container.runtimeArguments.includes('-nd')) client.login(config.discordToken);
 if (!container.runtimeArguments.includes('--no-whatsapp') && !container.runtimeArguments.includes('-nw')) whatsapp.initialize();
