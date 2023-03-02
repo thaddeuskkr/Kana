@@ -40,7 +40,6 @@ export class InfoCommand extends Command {
                 `**[Invite](https://kana.tkkr.one/invite)** | **[GitHub](https://kana.tkkr.one/github)** | **[Vote](https://kana.tkkr.one/vote)** on **[top.gg](https://kana.tkkr.one/dbl)** | Currently on **v${this.container.client.version}**`
             )
             .setColor('#cba6f7')
-            .setURL('https://kana.tkkr.one/github')
             .addFields([
                 {
                     name: 'Free:',
@@ -99,19 +98,17 @@ export class InfoCommand extends Command {
                     inline: true
                 },
                 {
-                    name: 'Total play time:',
-                    value: ms(stats.totalDuration, { verbose: true }),
-                    inline: true
-                },
-                {
                     name: 'Total commands executed:',
                     value: String(stats.totalCommandsInvoked),
                     inline: true
                 },
                 {
+                    name: 'Total play time:',
+                    value: ms(stats.totalDuration, { verbose: true })
+                },
+                {
                     name: 'Total uptime:',
-                    value: ms(stats.totalUptime * 1000, { verbose: true }),
-                    inline: true
+                    value: ms(stats.totalUptime * 1000, { verbose: true })
                 }
             ]);
         return interaction.editReply({ embeds: [embed1, embed2] });
