@@ -3,6 +3,7 @@ import { ApplicationCommandType } from 'discord-api-types/v10';
 import util from 'util';
 import tags from 'common-tags';
 import Discord from 'discord.js';
+import { createRequire } from 'module';
 
 const nl = '!!NL!!';
 const nlPattern = new RegExp(nl, 'g');
@@ -80,6 +81,7 @@ export class EvalCommand extends Command {
         const lastResult = this.lastResult;
         const container = this.container;
         const discord = Discord;
+        const require = createRequire(import.meta.url);
         /* eslint-enable no-unused-vars */
         let hrDiff;
         try {
@@ -110,6 +112,7 @@ export class EvalCommand extends Command {
         const discordClient = this.container.client;
         const message = msg;
         const lastResult = this.lastResult;
+        const require = createRequire(import.meta.url);
         /* eslint-enable no-unused-vars */
         let hrDiff;
         try {
