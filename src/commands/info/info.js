@@ -29,7 +29,7 @@ export class InfoCommand extends Command {
             .setTitle('About Kana')
             .setDescription(
                 'Kana is a free music Discord bot with WhatsApp integrations, made using [node.js](https://nodejs.org/) and [discord.js](https://discord.js.org/), powered by [Lavalink](https://github.com/freyacodes/Lavalink) and the [Sapphire Framework](https://sapphirejs.dev). Kana aims to provide music at the highest quality possible, fully free of charge, through a simple to use interface and command list.\n' +
-                '**[Invite](https://kana.tkkr.one/invite)** | **[GitHub](https://kana.tkkr.one/github)** | **[Vote](https://kana.tkkr.one/vote)** on **[top.gg](https://kana.tkkr.one/dbl)**'
+                `**[Invite](https://kana.tkkr.one/invite)** | **[GitHub](https://kana.tkkr.one/github)** | **[Vote](https://kana.tkkr.one/vote)** on **[top.gg](https://kana.tkkr.one/dbl)** | Currently on **v${this.container.client.version}**`
             )
             .setColor('#cba6f7')
             .setURL('https://kana.tkkr.one/github')
