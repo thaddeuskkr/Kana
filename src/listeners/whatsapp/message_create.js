@@ -72,6 +72,7 @@ export class MessageCreateListener extends Listener {
         }
 
         try {
+            this.container.totalCommandsInvoked++;
             command.whatsappRun({ args, msg, prefix, commandName, user, discordUser, voiceChannels, voice, sameVoice, defaultVc, dispatcher, author: msg.from.includes('@g.us') ? msg.author.replace('@c.us', '') : msg.from.replace('@c.us', '') });
         } catch (err) {
             await msg.react('❌');

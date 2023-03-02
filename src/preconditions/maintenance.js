@@ -17,6 +17,7 @@ export class MaintenanceModePrecondition extends AllFlowsPrecondition {
     }
 
     async maintenanceCheck(u) {
+        this.container.totalCommandsInvoked++;
         let maintenance = await this.container.db.get('maintenance');
         if (!maintenance) maintenance = false;
         if (maintenance == true && !this.container.config.ownerIds.includes(u)) return this.error({ message: 'Kana is currently in maintenance mode. Please try again later.' });

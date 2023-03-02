@@ -70,6 +70,10 @@ const whatsapp = new Client({
 });
 
 client.version = version;
+container.tracksPlayed = [];
+container.totalTracksPlayed = 0;
+container.totalCommandsInvoked = 0;
+container.totalTrackDuration = 0;
 container.runtimeArguments = process.argv.slice(2);
 container.whatsapp = whatsapp;
 container.config = config;
@@ -86,6 +90,34 @@ container.shoukaku = new Shoukaku(new Connectors.DiscordJS(client), config.laval
 process.on('unhandledRejection', (error) => {
     container.logger.error(error);
 });
+
+process.on('SIGTERM', cleanup);
+process.on('SIGINT', cleanup);
+process.on('SIGUSR1', cleanup);
+process.on('SIGUSR2', cleanup);
+
+const cleanup = async () => {
+    const stats = await container.db.get('stats');
+    if (!stats) {
+        await container.db.set('stats', {
+            tracksPlayed: container.tracksPlayed,
+            totalTracksPlayed: container.totalTracksPlayed,
+            totalDuration: container.totalTrackDuration,
+            totalCommandsInvoked: container.totalCommandsInvoked, 
+            totalUptime: process.uptime()
+        });
+        process.exit();
+    } else {
+        await container.db.set('stats', { 
+            tracksPlayed: [...stats.tracksPlayed, ...container.tracksPlayed], // List of tracks played by the bot ({ identifier, source })
+            totalTracksPlayed: container.totalTracksPlayed + stats.totalTracksPlayed, // Total number of tracks played by the bot
+            totalDuration: container.totalTrackDuration + stats.totalDuration, // Total duration of all tracks played by the bot (not including streams of course) in milliseconds
+            totalCommandsInvoked: container.totalCommandsInvoked + stats.totalCommandsInvoked, // Total number of commands invoked by users
+            totalUptime: process.uptime() + stats.totalUptime // Total uptime of the bot in seconds
+        });
+        process.exit();
+    }
+};
 
 if (!container.runtimeArguments.includes('--no-discord') && !container.runtimeArguments.includes('-nd')) client.login(config.discordToken);
 if (!container.runtimeArguments.includes('--no-whatsapp') && !container.runtimeArguments.includes('-nw')) whatsapp.initialize();
