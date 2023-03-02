@@ -92,7 +92,7 @@ export class InfoCommand extends Command {
                 },
                 {
                     name: 'Total play time:',
-                    value: ms(stats.totalTrackDuration, { verbose: true }),
+                    value: ms(stats.totalDuration, { verbose: true }),
                     inline: true
                 },
                 {
