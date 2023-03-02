@@ -77,7 +77,7 @@ export class InfoCommand extends Command {
                 },
                 {
                     name: 'Uptime:',
-                    value: ms(process.uptime * 1000, { verbose: true }),
+                    value: ms(process.uptime() * 1000, { verbose: true }),
                     inline: true
                 },
                 {
