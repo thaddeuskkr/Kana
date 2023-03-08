@@ -20,7 +20,7 @@ export class HelpCommand extends Command {
     }
     */
     
-    async whatsappRun ({ msg, args }) {
+    async whatsappRun ({ msg, args, author }) {
         const command = args.join(' ').toLowerCase().trim();
         const commands = this.container.stores.get('commands');
         if (command) {
@@ -39,10 +39,9 @@ export class HelpCommand extends Command {
         } else {
             await msg.reply(
                 tags.stripIndents`*Kana's commands:*
-                *Owner:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('owner') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
                 *Music:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('music') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
                 *Info:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('info') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
-                *Bot:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('bot') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`
+                *Utility:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('bot') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`${this.container.config.ownerIds.includes(author) ? `\n*Owner:* \n\`\`\`${commands.filter((command) => command.fullCategory.includes('owner') && command.whatsappRun).map((command) => command.name).join(', ')}\`\`\`` : ''}
                 \nFor more information on a command, type \`\`\`/help <command>\`\`\`.`
             );
         }
