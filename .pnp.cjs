@@ -31,7 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jeve/lyrics-finder", "npm:1.0.1"],\
             ["@keyv/mongo", "npm:2.1.8"],\
             ["@sapphire/discord.js-utilities", "npm:6.0.2"],\
-            ["@sapphire/framework", "npm:4.2.0"],\
+            ["@sapphire/framework", "npm:4.2.1"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/plugin-hmr", "npm:2.0.0"],\
             ["@sapphire/plugin-logger", "npm:3.0.1"],\
@@ -1251,6 +1251,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:2.5.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:6.0.3", {\
+          "packageLocation": "./.yarn/cache/@sapphire-discord.js-utilities-npm-6.0.3-fc0b8d2102-9b0f2cc2da.zip/node_modules/@sapphire/discord.js-utilities/",\
+          "packageDependencies": [\
+            ["@sapphire/discord.js-utilities", "npm:6.0.3"],\
+            ["@sapphire/discord-utilities", "npm:3.0.0"],\
+            ["@sapphire/duration", "npm:1.0.0"],\
+            ["@sapphire/utilities", "npm:3.11.0"],\
+            ["tslib", "npm:2.5.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@sapphire/duration", [\
@@ -1263,13 +1274,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@sapphire/framework", [\
-        ["npm:4.2.0", {\
-          "packageLocation": "./.yarn/cache/@sapphire-framework-npm-4.2.0-0fc5eb4ca5-b224c68b8f.zip/node_modules/@sapphire/framework/",\
+        ["npm:4.2.1", {\
+          "packageLocation": "./.yarn/cache/@sapphire-framework-npm-4.2.1-a5d4464616-d4c51ac8d7.zip/node_modules/@sapphire/framework/",\
           "packageDependencies": [\
-            ["@sapphire/framework", "npm:4.2.0"],\
+            ["@sapphire/framework", "npm:4.2.1"],\
             ["@discordjs/builders", "npm:1.4.0"],\
             ["@sapphire/discord-utilities", "npm:3.0.0"],\
-            ["@sapphire/discord.js-utilities", "npm:6.0.2"],\
+            ["@sapphire/discord.js-utilities", "npm:6.0.3"],\
             ["@sapphire/lexure", "npm:1.1.2"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/ratelimits", "npm:2.4.5"],\
@@ -3117,7 +3128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jeve/lyrics-finder", "npm:1.0.1"],\
             ["@keyv/mongo", "npm:2.1.8"],\
             ["@sapphire/discord.js-utilities", "npm:6.0.2"],\
-            ["@sapphire/framework", "npm:4.2.0"],\
+            ["@sapphire/framework", "npm:4.2.1"],\
             ["@sapphire/pieces", "npm:3.6.0"],\
             ["@sapphire/plugin-hmr", "npm:2.0.0"],\
             ["@sapphire/plugin-logger", "npm:3.0.1"],\
