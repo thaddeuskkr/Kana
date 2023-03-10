@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/plugin-logger", "npm:3.0.1"],\
             ["@sapphire/plugin-pattern-commands", "npm:5.0.0"],\
             ["@sapphire/plugin-subcommands", "npm:4.0.0"],\
-            ["@sapphire/ratelimits", "npm:2.4.5"],\
+            ["@sapphire/ratelimits", "npm:2.4.6"],\
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["@top-gg/sdk", "npm:3.1.3"],\
             ["common-tags", "npm:1.8.2"],\
@@ -1363,6 +1363,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@sapphire/ratelimits", "npm:2.4.5"],\
             ["@sapphire/timer-manager", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.4.6", {\
+          "packageLocation": "./.yarn/cache/@sapphire-ratelimits-npm-2.4.6-643ba3b581-cbec157ea8.zip/node_modules/@sapphire/ratelimits/",\
+          "packageDependencies": [\
+            ["@sapphire/ratelimits", "npm:2.4.6"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3134,7 +3141,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/plugin-logger", "npm:3.0.1"],\
             ["@sapphire/plugin-pattern-commands", "npm:5.0.0"],\
             ["@sapphire/plugin-subcommands", "npm:4.0.0"],\
-            ["@sapphire/ratelimits", "npm:2.4.5"],\
+            ["@sapphire/ratelimits", "npm:2.4.6"],\
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["@top-gg/sdk", "npm:3.1.3"],\
             ["common-tags", "npm:1.8.2"],\
