@@ -115,6 +115,16 @@ export class InfoCommand extends Command {
     }
 
     async whatsappRun({ msg }) {
-        return msg.reply('This command is not available on WhatsApp as there is a lot of data to be presented. Please execute this command on Discord instead.');
+        const owner = await this.container.client.users.fetch(this.container.config.ownerIds[0]);
+        return msg.reply(
+            '_*This command, on Discord, will show statistics of the bot. Please run this command on Discord instead to get the best possible experience.*_\n\n' + 
+            'Kana is a free music Discord bot with WhatsApp integrations, made using node.js and discord.js, powered by Lavalink and the Sapphire Framework. Kana aims to provide music at the highest quality possible, fully free of charge, through a simple to use interface and command list.\n' +
+            '*Invite:* https://kana.tkkr.one/invite\n' + 
+            '*GitHub:* https://kana.tkkr.one/github\n' + 
+            '*Vote on top.gg:* https://kana.tkkr.one/vote\n' + 
+            '*Support:* https://kana.tkkr.one/discord\n' +
+            `Currently running *v${this.container.client.version}*\n` +
+            'Kana is made with ♡ by ' + owner.tag + '.'
+        );
     }
 }
