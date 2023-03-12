@@ -19,13 +19,13 @@ export class MoveCommand extends Command {
                 .setDMPermission(false)
                 .addIntegerOption((option) =>
                     option
-                        .setName('oldPosition')
+                        .setName('old-position')
                         .setDescription('Index of the track that you want to move.')
                         .setRequired(true)
                 )
                 .addIntegerOption((option) =>
                     option
-                        .setName('newPosition')
+                        .setName('new-position')
                         .setDescription('The new index for the track.')
                         .setRequired(true)
                 )
