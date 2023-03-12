@@ -33,8 +33,8 @@ export class MoveCommand extends Command {
     }
     
     async chatInputRun(interaction) {
-        const oldPosition = interaction.options.getInteger('oldPosition');
-        const newPosition = interaction.options.getInteger('newPosition');
+        const oldPosition = interaction.options.getInteger('old-position');
+        const newPosition = interaction.options.getInteger('new-position');
         const dispatcher = this.container.queue.get(interaction.guildId);
         if (oldPosition < 1 || oldPosition > dispatcher.queue.length) return interaction.reply({ embeds: [this.container.util.embed('error', `Invalid old position (accepts **1** to **${dispatcher.queue.length}**).`)] });
         const track = dispatcher.queue.splice(oldPosition - 1, 1)[0];
