@@ -41,7 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["@top-gg/sdk", "npm:3.1.3"],\
             ["common-tags", "npm:1.8.2"],\
-            ["discord-api-types", "npm:0.37.35"],\
+            ["discord-api-types", "npm:0.37.36"],\
             ["discord.js", "npm:14.8.0"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.36.0"],\
@@ -2256,6 +2256,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["discord-api-types", "npm:0.37.35"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:0.37.36", {\
+          "packageLocation": "./.yarn/cache/discord-api-types-npm-0.37.36-24392287f0-ba3de36402.zip/node_modules/discord-api-types/",\
+          "packageDependencies": [\
+            ["discord-api-types", "npm:0.37.36"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["discord.js", [\
@@ -3175,7 +3182,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sapphire/stopwatch", "npm:1.5.0"],\
             ["@top-gg/sdk", "npm:3.1.3"],\
             ["common-tags", "npm:1.8.2"],\
-            ["discord-api-types", "npm:0.37.35"],\
+            ["discord-api-types", "npm:0.37.36"],\
             ["discord.js", "npm:14.8.0"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.36.0"],\
